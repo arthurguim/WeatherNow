@@ -12,7 +12,7 @@ import Alamofire
 class OpenWeatherService {
 
     func getData(completion: @escaping (OWData?) -> Void) {
-        guard let url = URL(string: "https://api.openweathermap.org/data/2.5/weather") else {
+        guard let url = URL(string: APIConstants.url) else {
             completion(nil)
             return
         }
@@ -38,7 +38,7 @@ class OpenWeatherService {
                     completion(nil)
                 }
             case .failure:
-                print(response.error?.localizedDescription)
+                print(response.error?.localizedDescription ?? "Error fetching data from API")
                 completion(nil)
             }
         }

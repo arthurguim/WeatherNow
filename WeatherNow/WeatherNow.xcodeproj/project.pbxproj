@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -21,6 +21,7 @@
 		E379B115235CBDFF00E2C28C /* OWClouds.swift in Sources */ = {isa = PBXBuildFile; fileRef = E379B114235CBDFF00E2C28C /* OWClouds.swift */; };
 		E379B117235CBE3800E2C28C /* OWSys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E379B116235CBE3800E2C28C /* OWSys.swift */; };
 		E379B11A235CC03600E2C28C /* OpenWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E379B119235CC03600E2C28C /* OpenWeatherService.swift */; };
+		E3925F1E235CD03E00BE7876 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3925F1D235CD03E00BE7876 /* Constants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		E379B114235CBDFF00E2C28C /* OWClouds.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWClouds.swift; sourceTree = "<group>"; };
 		E379B116235CBE3800E2C28C /* OWSys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWSys.swift; sourceTree = "<group>"; };
 		E379B119235CC03600E2C28C /* OpenWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherService.swift; sourceTree = "<group>"; };
+		E3925F1D235CD03E00BE7876 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,7 +72,6 @@
 				BEAEDD20E87959C15CCDFF5C /* Pods-WeatherNow.debug.xcconfig */,
 				A39BE31A0EFA377E461D475F /* Pods-WeatherNow.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -103,6 +104,7 @@
 				E379B0FD235CB96D00E2C28C /* Assets.xcassets */,
 				E379B0FF235CB96D00E2C28C /* LaunchScreen.storyboard */,
 				E379B102235CB96D00E2C28C /* Info.plist */,
+				E3925F1D235CD03E00BE7876 /* Constants.swift */,
 			);
 			path = WeatherNow;
 			sourceTree = "<group>";
@@ -253,6 +255,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E379B113235CBD0B00E2C28C /* OWWind.swift in Sources */,
+				E3925F1E235CD03E00BE7876 /* Constants.swift in Sources */,
 				E379B115235CBDFF00E2C28C /* OWClouds.swift in Sources */,
 				E379B11A235CC03600E2C28C /* OpenWeatherService.swift in Sources */,
 				E379B10F235CBBCA00E2C28C /* OWWeather.swift in Sources */,
