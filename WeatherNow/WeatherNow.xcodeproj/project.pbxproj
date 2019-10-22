@@ -8,8 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		187370A4CAD01C2A3F7FEB9F /* Pods_WeatherNow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C86D034F01A680A385F18C4 /* Pods_WeatherNow.framework */; };
+		E3184029235FAE60002716E6 /* OWRain.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3184028235FAE60002716E6 /* OWRain.swift */; };
 		E379B0F7235CB96D00E2C28C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E379B0F6235CB96D00E2C28C /* AppDelegate.swift */; };
-		E379B0F9235CB96D00E2C28C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E379B0F8235CB96D00E2C28C /* ViewController.swift */; };
 		E379B0FC235CB96D00E2C28C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E379B0FA235CB96D00E2C28C /* Main.storyboard */; };
 		E379B0FE235CB96D00E2C28C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E379B0FD235CB96D00E2C28C /* Assets.xcassets */; };
 		E379B101235CB96D00E2C28C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E379B0FF235CB96D00E2C28C /* LaunchScreen.storyboard */; };
@@ -22,15 +22,17 @@
 		E379B117235CBE3800E2C28C /* OWSys.swift in Sources */ = {isa = PBXBuildFile; fileRef = E379B116235CBE3800E2C28C /* OWSys.swift */; };
 		E379B11A235CC03600E2C28C /* OpenWeatherService.swift in Sources */ = {isa = PBXBuildFile; fileRef = E379B119235CC03600E2C28C /* OpenWeatherService.swift */; };
 		E3925F1E235CD03E00BE7876 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3925F1D235CD03E00BE7876 /* Constants.swift */; };
+		E3E35B7C235CD515002E1FD9 /* Weather.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E35B7B235CD515002E1FD9 /* Weather.swift */; };
+		E3E35B80235CD5D0002E1FD9 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3E35B7F235CD5D0002E1FD9 /* MainViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2C86D034F01A680A385F18C4 /* Pods_WeatherNow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherNow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A39BE31A0EFA377E461D475F /* Pods-WeatherNow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherNow.release.xcconfig"; path = "Target Support Files/Pods-WeatherNow/Pods-WeatherNow.release.xcconfig"; sourceTree = "<group>"; };
 		BEAEDD20E87959C15CCDFF5C /* Pods-WeatherNow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherNow.debug.xcconfig"; path = "Target Support Files/Pods-WeatherNow/Pods-WeatherNow.debug.xcconfig"; sourceTree = "<group>"; };
+		E3184028235FAE60002716E6 /* OWRain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWRain.swift; sourceTree = "<group>"; };
 		E379B0F3235CB96D00E2C28C /* WeatherNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E379B0F6235CB96D00E2C28C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E379B0F8235CB96D00E2C28C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E379B0FB235CB96D00E2C28C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E379B0FD235CB96D00E2C28C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E379B100235CB96D00E2C28C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -44,6 +46,8 @@
 		E379B116235CBE3800E2C28C /* OWSys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OWSys.swift; sourceTree = "<group>"; };
 		E379B119235CC03600E2C28C /* OpenWeatherService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenWeatherService.swift; sourceTree = "<group>"; };
 		E3925F1D235CD03E00BE7876 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E3E35B7B235CD515002E1FD9 /* Weather.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weather.swift; sourceTree = "<group>"; };
+		E3E35B7F235CD5D0002E1FD9 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +103,7 @@
 				E379B118235CC02800E2C28C /* Service */,
 				E379B108235CBAD500E2C28C /* Models */,
 				E379B0F6235CB96D00E2C28C /* AppDelegate.swift */,
-				E379B0F8235CB96D00E2C28C /* ViewController.swift */,
+				E3E35B7F235CD5D0002E1FD9 /* MainViewController.swift */,
 				E379B0FA235CB96D00E2C28C /* Main.storyboard */,
 				E379B0FD235CB96D00E2C28C /* Assets.xcassets */,
 				E379B0FF235CB96D00E2C28C /* LaunchScreen.storyboard */,
@@ -113,6 +117,7 @@
 			isa = PBXGroup;
 			children = (
 				E379B109235CBAE200E2C28C /* OpenWeather */,
+				E3E35B7B235CD515002E1FD9 /* Weather.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -125,6 +130,7 @@
 				E379B10E235CBBCA00E2C28C /* OWWeather.swift */,
 				E379B110235CBC8B00E2C28C /* OWMain.swift */,
 				E379B112235CBD0B00E2C28C /* OWWind.swift */,
+				E3184028235FAE60002716E6 /* OWRain.swift */,
 				E379B114235CBDFF00E2C28C /* OWClouds.swift */,
 				E379B116235CBE3800E2C28C /* OWSys.swift */,
 			);
@@ -257,10 +263,12 @@
 				E379B113235CBD0B00E2C28C /* OWWind.swift in Sources */,
 				E3925F1E235CD03E00BE7876 /* Constants.swift in Sources */,
 				E379B115235CBDFF00E2C28C /* OWClouds.swift in Sources */,
+				E3E35B80235CD5D0002E1FD9 /* MainViewController.swift in Sources */,
 				E379B11A235CC03600E2C28C /* OpenWeatherService.swift in Sources */,
+				E3E35B7C235CD515002E1FD9 /* Weather.swift in Sources */,
 				E379B10F235CBBCA00E2C28C /* OWWeather.swift in Sources */,
-				E379B0F9235CB96D00E2C28C /* ViewController.swift in Sources */,
 				E379B117235CBE3800E2C28C /* OWSys.swift in Sources */,
+				E3184029235FAE60002716E6 /* OWRain.swift in Sources */,
 				E379B111235CBC8B00E2C28C /* OWMain.swift in Sources */,
 				E379B10D235CBB2C00E2C28C /* OWCoord.swift in Sources */,
 				E379B10B235CBAF100E2C28C /* OWData.swift in Sources */,
