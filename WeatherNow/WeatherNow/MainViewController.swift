@@ -31,8 +31,8 @@ class MainViewController: UIViewController {
     func setupView(weather: Weather) {
         self.currentTemperatureLabel.text = String(format: "%.0f", weather.currentTemperature)
         self.weatherDescriptionLabel.text = weather.description
-        self.maxTemperatureLabel.text = String(format: "%f", weather.maxTemperature)
-        self.minTemperatureLabel.text = String(format: "%f", weather.minTemperature)
+        self.maxTemperatureLabel.text = String(format: "%.0f", weather.maxTemperature)
+        self.minTemperatureLabel.text = String(format: "%.0f", weather.minTemperature)
         self.cityNameLabel.text = weather.cityName
     }
 }
