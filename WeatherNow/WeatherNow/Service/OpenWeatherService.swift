@@ -11,7 +11,7 @@ import Alamofire
 
 class OpenWeatherService {
 
-    func getData(completion: @escaping (OWData?) -> Void) {
+    func getData(completion: @escaping (Weather?) -> Void) {
         guard let url = URL(string: APIConstants.url) else {
             completion(nil)
             return
@@ -32,7 +32,8 @@ class OpenWeatherService {
 
                 do {
                     let owData = try JSONDecoder().decode(OWData.self, from: data)
-                    completion(owData)
+                    let weather = Weather(data: owData)
+                    completion(weather)
                 } catch {
                     print(error.localizedDescription)
                     completion(nil)
