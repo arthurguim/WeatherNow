@@ -9,6 +9,6 @@
 import Foundation
 
 struct OWCoord: Decodable {
-    let long: Double?
-    let lat: Double?
+    let lon: Double
+    let lat: Double
 }

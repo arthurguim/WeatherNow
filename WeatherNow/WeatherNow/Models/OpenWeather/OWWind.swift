@@ -9,6 +9,6 @@
 import Foundation
 
 struct OWWind: Decodable {
-    let speed: Double?
-    let deg: Int?
+    let speed: Double
+    let deg: Int
 }

@@ -9,10 +9,9 @@
 import Foundation
 
 struct OWSys: Decodable {
-    let type: Int?
-    let id: Int?
-    let message: Double?
-    let coutry: String?
+    let type: Int
+    let id: Int
+    let country: String
     let sunrise: TimeInterval
     let sunset: TimeInterval
 }
