@@ -12,4 +12,25 @@ struct OWMain: Decodable {
     let temp: Double
     let temp_min: Double
     let temp_max: Double
+
+    var currentTemperature: Measurement<UnitTemperature> {
+        get {
+            let temperature = Measurement.init(value: self.temp, unit: UnitTemperature.celsius)
+            return temperature
+        }
+    }
+
+    var minTemperature: Measurement<UnitTemperature> {
+        get {
+            let temperature = Measurement.init(value: self.temp_min, unit: UnitTemperature.celsius)
+            return temperature
+        }
+    }
+
+    var maxTemperature: Measurement<UnitTemperature> {
+        get {
+            let temperature = Measurement.init(value: self.temp_max, unit: UnitTemperature.celsius)
+            return temperature
+        }
+    }
 }

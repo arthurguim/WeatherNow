@@ -29,11 +29,17 @@ class MainViewController: UIViewController {
     }
 
     func setupView(weather: Weather) {
-        self.currentTemperatureLabel.text = String(format: "%.0f", weather.currentTemperature)
-        self.weatherDescriptionLabel.text = weather.description
-        self.maxTemperatureLabel.text = String(format: "%.0f", weather.maxTemperature)
-        self.minTemperatureLabel.text = String(format: "%.0f", weather.minTemperature)
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumFractionDigits = 0
+        let measurementFormatter = MeasurementFormatter()
+        measurementFormatter.numberFormatter = numberFormatter
+
+        self.currentTemperatureLabel.text = measurementFormatter.string(for: weather.currentTemperature)
+        self.maxTemperatureLabel.text = measurementFormatter.string(for: weather.maxTemperature)
+        self.minTemperatureLabel.text = measurementFormatter.string(for: weather.minTemperature)
+
         self.cityNameLabel.text = weather.cityName
+        self.weatherDescriptionLabel.text = weather.description
     }
 
     @IBAction func didTapSettings(_ sender: UIButton) {
