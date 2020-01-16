@@ -42,8 +42,8 @@ class MainViewController: UIViewController {
         self.weatherDescriptionLabel.text = weather.description
     }
 
-    @IBAction func didTapSettings(_ sender: UIButton) {
-        let settingsView = SettingsTableViewController(style: .grouped)
-        self.navigationController?.pushViewController(settingsView, animated: true)
+    @IBAction func didTapAddCity(_ sender: UIBarButtonItem) {
+        let citySelectionViewController = CitySelectionTableViewController(style: .grouped)
+        self.navigationController?.pushViewController(citySelectionViewController, animated: true)
     }
 }
