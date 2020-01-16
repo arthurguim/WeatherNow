@@ -71,10 +71,18 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PAf-Fy-NV2">
+                                <rect key="frame" x="159" y="617" width="57" height="30"/>
+                                <state key="normal" title="Settings"/>
+                                <connections>
+                                    <action selector="didTapSettings:" destination="mBv-G8-sOg" eventType="touchUpInside" id="VmR-Q7-KNQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="rMV-pl-qPr" secondAttribute="trailing" constant="10" id="ANb-iv-kMe"/>
+                            <constraint firstItem="hKK-rZ-Ccd" firstAttribute="bottom" secondItem="PAf-Fy-NV2" secondAttribute="bottom" constant="20" id="G2K-cs-37d"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="top" secondItem="P17-Sr-eeC" secondAttribute="bottom" constant="10" id="Hal-Tl-WSo"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="50" id="SJw-TF-fok"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="N6s-yX-v22" secondAttribute="bottom" constant="50" id="Wql-RQ-7DY"/>
@@ -82,6 +90,7 @@
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="rUu-zJ-LdX" secondAttribute="bottom" constant="8" id="k4v-bZ-S0u"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="kHe-4q-e7f"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="10" id="nQc-C7-09L"/>
+                            <constraint firstItem="PAf-Fy-NV2" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="rAw-LC-qjn"/>
                             <constraint firstItem="rUu-zJ-LdX" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="16" id="wls-GO-mrz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hKK-rZ-Ccd"/>

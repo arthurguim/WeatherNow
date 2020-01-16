@@ -35,4 +35,9 @@ class MainViewController: UIViewController {
         self.minTemperatureLabel.text = String(format: "%.0f", weather.minTemperature)
         self.cityNameLabel.text = weather.cityName
     }
+
+    @IBAction func didTapSettings(_ sender: UIButton) {
+        let settingsView = SettingsTableViewController(style: .grouped)
+        self.navigationController?.pushViewController(settingsView, animated: true)
+    }
 }
