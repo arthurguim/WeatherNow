@@ -9,18 +9,7 @@
 import Foundation
 
 struct OWData: Decodable {
-    let coord: OWCoord
     let weather: [OWWeather]
-    let base: String
     let main: OWMain
-    let visibility: Int
-    let wind: OWWind
-    let rain: OWRain
-    let clouds: OWClouds
-    let dt: Int
-    let sys: OWSys
-    let timezone: Int
-    let id: Int
     let name: String
-    let cod: Int
 }
