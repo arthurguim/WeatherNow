@@ -15,7 +15,7 @@ class CitySelectionTableViewController: UITableViewController {
     // MARK: - Objects declaration
     let addCityCell: UITableViewCell = {
         let cell = UITableViewCell()
-        cell.textLabel?.text = "Add city"
+        cell.textLabel?.text = NSLocalizedString("Add_City_Text_Label_Cell", comment: "")
         cell.accessoryType = .disclosureIndicator
         return cell
     }()
@@ -23,7 +23,7 @@ class CitySelectionTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        navigationItem.title = "My cities"
+        navigationItem.title = NSLocalizedString("Navigation_Title", comment: "")
 
         view.addSubview(addCityCell)
     }
@@ -58,7 +58,7 @@ class CitySelectionTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         if citysSelected.count != 0 && section == 0 {
-            return "Citys selected"
+            return NSLocalizedString("Group_TableView_Header_Title", comment: "")
         } else {
             return nil
         }
@@ -66,7 +66,7 @@ class CitySelectionTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, titleForFooterInSection section: Int) -> String? {
         if citysSelected.count == 0 || section == 1 {
-            return "Add a new city to show in the main screen"
+            return NSLocalizedString("Group_TableView_Footer_Title", comment: "")
         } else {
             return nil
         }

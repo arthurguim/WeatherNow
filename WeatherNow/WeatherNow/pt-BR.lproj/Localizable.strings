@@ -1,0 +1,17 @@
+/* 
+  Localizable.strings
+  WeatherNow
+
+  Created by Arthur Silva on 16/01/20.
+  Copyright © 2020 Arthur Silva. All rights reserved.
+*/
+
+// MARK: - MainViewController
+"Max_Temp_Title_Label" = "Máx:";
+"Min_Temp_Title_Label" = "Mín:";
+
+// MARK: - CitySelectionTableViewController
+"Navigation_Title" = "Minhas cidades";
+"Group_TableView_Header_Title" = "Cidades selecionadas";
+"Group_TableView_Footer_Title" = "Adicione uma nova cidade para sua tela principal";
+"Add_City_Text_Label_Cell" = "Adicionar cidade";

@@ -12,23 +12,32 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
+    @IBOutlet weak var maxTemperatureTitleLabel: UILabel!
     @IBOutlet weak var maxTemperatureLabel: UILabel!
+    @IBOutlet weak var minTemperatureTitleLabel: UILabel!
     @IBOutlet weak var minTemperatureLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        localizeView()
+
         let service = OpenWeatherService()
         service.getData { weather in
 
             guard let weather = weather else { return }
 
-            self.setupView(weather: weather)
+            self.updateView(weather: weather)
         }
     }
 
-    func setupView(weather: Weather) {
+    func localizeView() {
+        self.maxTemperatureTitleLabel.text = NSLocalizedString("Max_Temp_Title_Label", comment: "")
+        self.minTemperatureTitleLabel.text = NSLocalizedString("Min_Temp_Title_Label", comment: "")
+    }
+
+    func updateView(weather: Weather) {
         let numberFormatter = NumberFormatter()
         numberFormatter.maximumFractionDigits = 0
         let measurementFormatter = MeasurementFormatter()
