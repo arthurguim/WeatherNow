@@ -50,7 +50,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMV-pl-qPr" userLabel="Separation View">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMV-pl-qPr" userLabel="First Separation View">
                                 <rect key="frame" x="10" y="245" width="355" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
@@ -81,13 +81,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkN-jE-ehl">
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkN-jE-ehl" userLabel="Second Separator View">
                                 <rect key="frame" x="10" y="314" width="355" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="YUi-sx-I3r"/>
                                 </constraints>
                             </view>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dwK-w2-bhn">
+                                <rect key="frame" x="335" y="64" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -105,10 +108,12 @@
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="N6s-yX-v22" secondAttribute="bottom" constant="50" id="Wql-RQ-7DY"/>
                             <constraint firstItem="Sbj-Rx-SFo" firstAttribute="centerY" secondItem="qri-aj-hbp" secondAttribute="centerY" id="Xcb-wM-WeY"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="centerX" secondItem="P17-Sr-eeC" secondAttribute="centerX" id="ZFC-Yh-1Tb"/>
+                            <constraint firstItem="dwK-w2-bhn" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="20" id="bUX-6H-CED"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="leading" secondItem="qri-aj-hbp" secondAttribute="leading" id="e9B-qn-NS0"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="rUu-zJ-LdX" secondAttribute="bottom" constant="8" id="k4v-bZ-S0u"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="kHe-4q-e7f"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="10" id="nQc-C7-09L"/>
+                            <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="dwK-w2-bhn" secondAttribute="trailing" constant="20" id="rMm-0i-jnl"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="Sbj-Rx-SFo" secondAttribute="trailing" constant="16" id="rQQ-GY-ZcL"/>
                             <constraint firstItem="rUu-zJ-LdX" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="16" id="wls-GO-mrz"/>
                         </constraints>
@@ -122,6 +127,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="activityIndicator" destination="dwK-w2-bhn" id="Q1h-HR-cCe"/>
                         <outlet property="cityNameLabel" destination="rUu-zJ-LdX" id="dl7-wf-efD"/>
                         <outlet property="currentTemperatureLabel" destination="P17-Sr-eeC" id="yhG-Dg-tBu"/>
                         <outlet property="humidityLabel" destination="zg8-4l-5G8" id="AN0-At-umF"/>

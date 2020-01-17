@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreLocation
 
 class MainViewController: UIViewController {
 
+    // MARK: - Outlets
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var maxTemperatureLabel: UILabel!
@@ -18,21 +21,22 @@ class MainViewController: UIViewController {
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
 
+    // MARK: - Local parameters
+    var weatherService: OpenWeatherService?
+    var locationManager: CLLocationManager?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        localizeView()
+        self.weatherService = OpenWeatherService()
 
-        let service = OpenWeatherService()
-        service.getData { weather in
+        self.locationManager = CLLocationManager()
+        self.locationManager?.delegate = self
 
-            guard let weather = weather else { return }
-
-            self.updateView(weather: weather)
-        }
+        localizeLabels()
     }
 
-    func localizeView() {
+    func localizeLabels() {
         self.maxTemperatureLabel.localizedValue(identifier: "Max_Temp_Label", defaultValue: AppContants.temperatureNoValue)
         self.minTemperatureLabel.localizedValue(identifier: "Min_Temp_Label", defaultValue: AppContants.temperatureNoValue)
         self.pressureLabel.localizedValue(identifier: "Pressure_Label", defaultValue: AppContants.pressureNoValue)
@@ -58,10 +62,45 @@ class MainViewController: UIViewController {
         self.pressureLabel.localizedValue(identifier: "Pressure_Label", value: pressure, defaultValue: AppContants.pressureNoValue)
         let humidity = numberFormatter.string(for: weather.humidity)
         self.humidityLabel.localizedValue(identifier: "Humidity_Label", value: humidity, defaultValue: AppContants.humidityNoValue)
+
+        self.activityIndicator.stopAnimating()
     }
 
+    // MARK: - Actions
     @IBAction func didTapAddCity(_ sender: UIBarButtonItem) {
         let citySelectionViewController = CitySelectionTableViewController(style: .grouped)
         self.navigationController?.pushViewController(citySelectionViewController, animated: true)
+    }
+}
+
+// MARK: - CLLocationManagerDelegate
+extension MainViewController: CLLocationManagerDelegate {
+
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        if status == CLAuthorizationStatus.authorizedWhenInUse {
+            self.activityIndicator.startAnimating()
+            self.locationManager?.requestLocation()
+
+        } else if status == CLAuthorizationStatus.notDetermined {
+            self.locationManager?.requestWhenInUseAuthorization()
+        }
+    }
+
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        guard let location = locations.first else {
+            return
+        }
+
+        let latitude = String(location.coordinate.latitude)
+        let longitude = String(location.coordinate.longitude)
+        self.weatherService?.getData(lat: latitude, lon: longitude, completion: { weather in
+            guard let weather = weather else { return }
+            self.updateView(weather: weather)
+        })
+    }
+
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print(error.localizedDescription)
+        return
     }
 }
