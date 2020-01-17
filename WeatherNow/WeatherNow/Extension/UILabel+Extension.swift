@@ -9,8 +9,7 @@
 import UIKit
 
 extension UILabel {
-    func localizedValue(identifier: String, value: String? = AppContants.noValue) {
-        let aValue = value ?? AppContants.noValue
-        self.text = String.init(format: NSLocalizedString(identifier, comment: ""), aValue)
+    func localizedValue(identifier: String, value: String? = nil, defaultValue: String) {
+        self.text = String.init(format: NSLocalizedString(identifier, comment: ""), value ?? defaultValue)
     }
 }

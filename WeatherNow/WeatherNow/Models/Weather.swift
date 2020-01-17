@@ -14,6 +14,7 @@ struct Weather {
     let cityName: String
     let maxTemperature: Measurement<UnitTemperature>
     let minTemperature: Measurement<UnitTemperature>
+    let pressure: Measurement<UnitPressure>
 
     init(data: OWData) {
         self.currentTemperature = data.main.currentTemperature
@@ -21,5 +22,6 @@ struct Weather {
         self.cityName = data.name
         self.maxTemperature = data.main.maxTemperature
         self.minTemperature = data.main.minTemperature
+        self.pressure = data.main.currentPressure
     }
 }

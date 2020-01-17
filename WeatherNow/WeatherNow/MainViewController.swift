@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var maxTemperatureLabel: UILabel!
     @IBOutlet weak var minTemperatureLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var pressureLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +32,9 @@ class MainViewController: UIViewController {
     }
 
     func localizeView() {
-        self.maxTemperatureLabel.localizedValue(identifier: "Max_Temp_Label")
-        self.minTemperatureLabel.localizedValue(identifier: "Min_Temp_Label")
+        self.maxTemperatureLabel.localizedValue(identifier: "Max_Temp_Label", defaultValue: AppContants.temperatureNoValue)
+        self.minTemperatureLabel.localizedValue(identifier: "Min_Temp_Label", defaultValue: AppContants.temperatureNoValue)
+        self.pressureLabel.localizedValue(identifier: "Pressure_Label", defaultValue: AppContants.pressureNoValue)
     }
 
     func updateView(weather: Weather) {
@@ -42,11 +44,15 @@ class MainViewController: UIViewController {
         measurementFormatter.numberFormatter = numberFormatter
 
         self.currentTemperatureLabel.text = measurementFormatter.string(for: weather.currentTemperature)
-        self.maxTemperatureLabel.localizedValue(identifier: "Max_Temp_Label", value: measurementFormatter.string(for: weather.maxTemperature))
-        self.minTemperatureLabel.localizedValue(identifier: "Min_Temp_Label", value: measurementFormatter.string(for: weather.minTemperature))
-
         self.cityNameLabel.text = weather.cityName
         self.weatherDescriptionLabel.text = weather.description
+
+        let maxTemperature = measurementFormatter.string(from: weather.maxTemperature)
+        self.maxTemperatureLabel.localizedValue(identifier: "Max_Temp_Label", value: maxTemperature, defaultValue: AppContants.temperatureNoValue)
+        let minTemperature = measurementFormatter.string(from: weather.minTemperature)
+        self.minTemperatureLabel.localizedValue(identifier: "Min_Temp_Label", value: minTemperature, defaultValue: AppContants.temperatureNoValue)
+        let pressure = measurementFormatter.string(from: weather.pressure)
+        self.pressureLabel.localizedValue(identifier: "Pressure_Label", value: pressure, defaultValue: AppContants.pressureNoValue)
     }
 
     @IBAction func didTapAddCity(_ sender: UIBarButtonItem) {

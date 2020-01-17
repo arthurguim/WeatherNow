@@ -9,6 +9,7 @@
 // MARK: - MainViewController
 "Max_Temp_Label" = "Max: %@";
 "Min_Temp_Label" = "Min: %@";
+"Pressure_Label" = "Pressure: %@";
 
 // MARK: - CitySelectionTableViewController
 "Navigation_Title" = "My cities";
