@@ -65,6 +65,16 @@ class MainViewController: UIViewController {
 
         self.activityIndicator.stopAnimating()
     }
+
+    // MARK: - Actions
+    @IBAction func didTapRefreshButton(_ sender: Any) {
+        if self.activityIndicator.isAnimating {
+            return
+        }
+
+        self.activityIndicator.startAnimating()
+        self.locationManager?.requestLocation()
+    }
 }
 
 // MARK: - CLLocationManagerDelegate
