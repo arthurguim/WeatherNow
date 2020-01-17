@@ -57,26 +57,14 @@
                                     <constraint firstAttribute="height" constant="1" id="u1b-xx-B7a"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iiG-By-sp6" userLabel="Max Temp Title Label">
-                                <rect key="frame" x="16" y="254" width="37" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Max: --°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qri-aj-hbp" userLabel="Max Temp Label">
+                                <rect key="frame" x="16" y="254" width="64" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qri-aj-hbp" userLabel="Max Temp Label">
-                                <rect key="frame" x="57" y="254" width="23" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXp-3P-eol" userLabel="Min Temp Title Label">
-                                <rect key="frame" x="16" y="285" width="33" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0R-H1-pou" userLabel="Min Temp Label">
-                                <rect key="frame" x="53" y="285" width="23" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min: --°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0R-H1-pou" userLabel="Min Temp Label">
+                                <rect key="frame" x="16" y="285" width="60" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -84,22 +72,17 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="qri-aj-hbp" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="16" id="4ZB-BV-qch"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="rMV-pl-qPr" secondAttribute="trailing" constant="10" id="ANb-iv-kMe"/>
-                            <constraint firstItem="CXp-3P-eol" firstAttribute="leading" secondItem="iiG-By-sp6" secondAttribute="leading" id="Cn9-P8-fo6"/>
+                            <constraint firstItem="qri-aj-hbp" firstAttribute="top" secondItem="rMV-pl-qPr" secondAttribute="bottom" constant="8" id="HaM-sa-vN5"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="top" secondItem="P17-Sr-eeC" secondAttribute="bottom" constant="10" id="Hal-Tl-WSo"/>
-                            <constraint firstItem="c0R-H1-pou" firstAttribute="centerY" secondItem="CXp-3P-eol" secondAttribute="centerY" id="Iog-jd-LDQ"/>
+                            <constraint firstItem="c0R-H1-pou" firstAttribute="top" secondItem="qri-aj-hbp" secondAttribute="bottom" constant="10" id="R11-S8-Xde"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="50" id="SJw-TF-fok"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="N6s-yX-v22" secondAttribute="bottom" constant="50" id="Wql-RQ-7DY"/>
-                            <constraint firstItem="CXp-3P-eol" firstAttribute="top" secondItem="iiG-By-sp6" secondAttribute="bottom" constant="10" id="YBW-1h-t7N"/>
-                            <constraint firstItem="qri-aj-hbp" firstAttribute="leading" secondItem="iiG-By-sp6" secondAttribute="trailing" constant="4" id="Yag-Qa-3BS"/>
-                            <constraint firstItem="CXp-3P-eol" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="16" id="Z1N-eK-g82"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="centerX" secondItem="P17-Sr-eeC" secondAttribute="centerX" id="ZFC-Yh-1Tb"/>
-                            <constraint firstItem="c0R-H1-pou" firstAttribute="leading" secondItem="CXp-3P-eol" secondAttribute="trailing" constant="4" id="ez6-RZ-ZQB"/>
-                            <constraint firstItem="iiG-By-sp6" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="16" id="ggY-hC-tLV"/>
-                            <constraint firstItem="iiG-By-sp6" firstAttribute="top" secondItem="rMV-pl-qPr" secondAttribute="bottom" constant="8" id="hvk-nn-2tG"/>
+                            <constraint firstItem="c0R-H1-pou" firstAttribute="leading" secondItem="qri-aj-hbp" secondAttribute="leading" id="e9B-qn-NS0"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="rUu-zJ-LdX" secondAttribute="bottom" constant="8" id="k4v-bZ-S0u"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="kHe-4q-e7f"/>
-                            <constraint firstItem="qri-aj-hbp" firstAttribute="centerY" secondItem="iiG-By-sp6" secondAttribute="centerY" id="m6U-GU-5np"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="10" id="nQc-C7-09L"/>
                             <constraint firstItem="rUu-zJ-LdX" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="16" id="wls-GO-mrz"/>
                         </constraints>
@@ -116,9 +99,7 @@
                         <outlet property="cityNameLabel" destination="rUu-zJ-LdX" id="dl7-wf-efD"/>
                         <outlet property="currentTemperatureLabel" destination="P17-Sr-eeC" id="yhG-Dg-tBu"/>
                         <outlet property="maxTemperatureLabel" destination="qri-aj-hbp" id="ZHx-ce-lZy"/>
-                        <outlet property="maxTemperatureTitleLabel" destination="iiG-By-sp6" id="0O8-S0-a0h"/>
                         <outlet property="minTemperatureLabel" destination="c0R-H1-pou" id="uQl-6B-UTg"/>
-                        <outlet property="minTemperatureTitleLabel" destination="CXp-3P-eol" id="lrT-XP-DZK"/>
                         <outlet property="weatherDescriptionLabel" destination="N6s-yX-v22" id="33x-a7-NZt"/>
                     </connections>
                 </viewController>

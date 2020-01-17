@@ -12,9 +12,7 @@ class MainViewController: UIViewController {
 
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
-    @IBOutlet weak var maxTemperatureTitleLabel: UILabel!
     @IBOutlet weak var maxTemperatureLabel: UILabel!
-    @IBOutlet weak var minTemperatureTitleLabel: UILabel!
     @IBOutlet weak var minTemperatureLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
 
@@ -33,8 +31,8 @@ class MainViewController: UIViewController {
     }
 
     func localizeView() {
-        self.maxTemperatureTitleLabel.text = NSLocalizedString("Max_Temp_Title_Label", comment: "")
-        self.minTemperatureTitleLabel.text = NSLocalizedString("Min_Temp_Title_Label", comment: "")
+        self.maxTemperatureLabel.text = String.init(format: NSLocalizedString("Max_Temp_Label", comment: ""), "--°")
+        self.minTemperatureLabel.text = String.init(format: NSLocalizedString("Min_Temp_Label", comment: ""), "--°")
     }
 
     func updateView(weather: Weather) {
@@ -44,8 +42,8 @@ class MainViewController: UIViewController {
         measurementFormatter.numberFormatter = numberFormatter
 
         self.currentTemperatureLabel.text = measurementFormatter.string(for: weather.currentTemperature)
-        self.maxTemperatureLabel.text = measurementFormatter.string(for: weather.maxTemperature)
-        self.minTemperatureLabel.text = measurementFormatter.string(for: weather.minTemperature)
+        self.maxTemperatureLabel.text = String.init(format: NSLocalizedString("Max_Temp_Label", comment: ""), measurementFormatter.string(for: weather.maxTemperature) ?? "--°")
+        self.minTemperatureLabel.text = String.init(format: NSLocalizedString("Min_Temp_Label", comment: ""), measurementFormatter.string(for: weather.minTemperature) ?? "--°")
 
         self.cityNameLabel.text = weather.cityName
         self.weatherDescriptionLabel.text = weather.description

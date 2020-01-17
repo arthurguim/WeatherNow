@@ -7,8 +7,8 @@
 */
 
 // MARK: - MainViewController
-"Max_Temp_Title_Label" = "Máx:";
-"Min_Temp_Title_Label" = "Mín:";
+"Max_Temp_Label" = "Máx: %@";
+"Min_Temp_Label" = "Mín: %@";
 
 // MARK: - CitySelectionTableViewController
 "Navigation_Title" = "Minhas cidades";
