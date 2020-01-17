@@ -141,50 +141,5 @@
             </objects>
             <point key="canvasLocation" x="485.60000000000002" y="43.628185907046479"/>
         </scene>
-        <!--City Search View Controller-->
-        <scene sceneID="AdO-DL-Kot">
-            <objects>
-                <viewController id="CkC-fs-U06" customClass="CitySearchViewController" customModule="WeatherNow" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="F2l-tJ-UsP">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="91R-rC-716">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="40"/>
-                                <subviews>
-                                    <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="City name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="DsH-bb-Ptm">
-                                        <rect key="frame" x="10" y="3" width="277" height="34"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bBX-x6-1da">
-                                        <rect key="frame" x="307" y="5" width="48" height="30"/>
-                                        <state key="normal" title="Search"/>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="bBX-x6-1da" secondAttribute="trailing" constant="20" id="6Nx-qs-tU2"/>
-                                    <constraint firstItem="DsH-bb-Ptm" firstAttribute="centerY" secondItem="91R-rC-716" secondAttribute="centerY" id="Oue-Lc-GzT"/>
-                                    <constraint firstItem="bBX-x6-1da" firstAttribute="centerY" secondItem="91R-rC-716" secondAttribute="centerY" id="Vc0-4f-DD3"/>
-                                    <constraint firstAttribute="height" constant="40" id="f3x-7J-Nii"/>
-                                    <constraint firstItem="DsH-bb-Ptm" firstAttribute="leading" secondItem="91R-rC-716" secondAttribute="leading" constant="10" id="kYd-EC-cgz"/>
-                                    <constraint firstItem="bBX-x6-1da" firstAttribute="leading" secondItem="DsH-bb-Ptm" secondAttribute="trailing" constant="20" id="u5j-Rp-PHX"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="91R-rC-716" firstAttribute="top" secondItem="18e-KH-sYf" secondAttribute="top" id="6cq-yM-GRW"/>
-                            <constraint firstItem="18e-KH-sYf" firstAttribute="trailing" secondItem="91R-rC-716" secondAttribute="trailing" id="b6l-qf-Qx8"/>
-                            <constraint firstItem="91R-rC-716" firstAttribute="leading" secondItem="18e-KH-sYf" secondAttribute="leading" id="uyY-yy-lJ7"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="18e-KH-sYf"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9ou-i0-UgA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1279" y="44"/>
-        </scene>
     </scenes>
 </document>
