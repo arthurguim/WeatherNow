@@ -51,7 +51,7 @@ class MainViewController: UIViewController {
         measurementFormatter.numberFormatter = numberFormatter
 
         self.currentTemperatureLabel.text = measurementFormatter.string(for: weather.currentTemperature)
-        self.cityNameLabel.text = weather.cityName
+        self.cityNameLabel.text = String.init(format: AppContants.cityName, weather.cityName, weather.countryName)
         self.weatherDescriptionLabel.text = weather.description
 
         let maxTemperature = measurementFormatter.string(from: weather.maxTemperature)

@@ -16,4 +16,6 @@ struct AppContants {
     static let temperatureNoValue: String = "--°"
     static let pressureNoValue: String = "---- mba"
     static let humidityNoValue: String = "--"
+
+    static let cityName: String = "%@, %@"
 }
