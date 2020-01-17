@@ -11,6 +11,7 @@
 		9915559623D0970400D93CCC /* CitySelectionTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9915559523D0970400D93CCC /* CitySelectionTableViewController.swift */; };
 		9915559A23D0DF9100D93CCC /* CitySearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9915559923D0DF9100D93CCC /* CitySearchViewController.swift */; };
 		991555A223D0F71500D93CCC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991555A423D0F71500D93CCC /* Localizable.strings */; };
+		993D57CB23D1E3E40091EC92 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D57CA23D1E3E40091EC92 /* UILabel+Extension.swift */; };
 		E379B0F7235CB96D00E2C28C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E379B0F6235CB96D00E2C28C /* AppDelegate.swift */; };
 		E379B0FC235CB96D00E2C28C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E379B0FA235CB96D00E2C28C /* Main.storyboard */; };
 		E379B0FE235CB96D00E2C28C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E379B0FD235CB96D00E2C28C /* Assets.xcassets */; };
@@ -30,6 +31,7 @@
 		9915559923D0DF9100D93CCC /* CitySearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CitySearchViewController.swift; sourceTree = "<group>"; };
 		991555A323D0F71500D93CCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		991555A523D0F74E00D93CCC /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		993D57CA23D1E3E40091EC92 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		A39BE31A0EFA377E461D475F /* Pods-WeatherNow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherNow.release.xcconfig"; path = "Target Support Files/Pods-WeatherNow/Pods-WeatherNow.release.xcconfig"; sourceTree = "<group>"; };
 		BEAEDD20E87959C15CCDFF5C /* Pods-WeatherNow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WeatherNow.debug.xcconfig"; path = "Target Support Files/Pods-WeatherNow/Pods-WeatherNow.debug.xcconfig"; sourceTree = "<group>"; };
 		E379B0F3235CB96D00E2C28C /* WeatherNow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherNow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -76,6 +78,14 @@
 			path = ViewControllers;
 			sourceTree = "<group>";
 		};
+		993D57C923D1E3B40091EC92 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				993D57CA23D1E3E40091EC92 /* UILabel+Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		B9E589FBA85643F07B0A5473 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -106,6 +116,7 @@
 		E379B0F5235CB96D00E2C28C /* WeatherNow */ = {
 			isa = PBXGroup;
 			children = (
+				993D57C923D1E3B40091EC92 /* Extension */,
 				9915559423D096D600D93CCC /* ViewControllers */,
 				E379B118235CC02800E2C28C /* Service */,
 				E379B108235CBAD500E2C28C /* Models */,
@@ -265,6 +276,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				993D57CB23D1E3E40091EC92 /* UILabel+Extension.swift in Sources */,
 				E3925F1E235CD03E00BE7876 /* Constants.swift in Sources */,
 				E3E35B80235CD5D0002E1FD9 /* MainViewController.swift in Sources */,
 				E379B11A235CC03600E2C28C /* OpenWeatherService.swift in Sources */,

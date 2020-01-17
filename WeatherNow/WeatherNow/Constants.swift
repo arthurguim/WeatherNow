@@ -11,3 +11,7 @@ import Foundation
 struct APIConstants {
     static let url: String = "https://api.openweathermap.org/data/2.5/weather"
 }
+
+struct AppContants {
+    static let noValue: String = "--°"
+}
