@@ -14,5 +14,6 @@ struct APIConstants {
 
 struct AppContants {
     static let temperatureNoValue: String = "--°"
-    static let pressureNoValue: String = "----hpa"
+    static let pressureNoValue: String = "---- mba"
+    static let humidityNoValue: String = "--"
 }

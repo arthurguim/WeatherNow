@@ -13,6 +13,7 @@ struct OWMain: Decodable {
     let temp_min: Double
     let temp_max: Double
     let pressure: Double
+    let humidity: Double
 
     var currentTemperature: Measurement<UnitTemperature> {
         get {

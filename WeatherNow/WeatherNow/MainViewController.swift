@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var minTemperatureLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
+    @IBOutlet weak var humidityLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,10 +36,12 @@ class MainViewController: UIViewController {
         self.maxTemperatureLabel.localizedValue(identifier: "Max_Temp_Label", defaultValue: AppContants.temperatureNoValue)
         self.minTemperatureLabel.localizedValue(identifier: "Min_Temp_Label", defaultValue: AppContants.temperatureNoValue)
         self.pressureLabel.localizedValue(identifier: "Pressure_Label", defaultValue: AppContants.pressureNoValue)
+        self.humidityLabel.localizedValue(identifier: "Humidity_Label", defaultValue: AppContants.humidityNoValue)
     }
 
     func updateView(weather: Weather) {
         let numberFormatter = NumberFormatter()
+        numberFormatter.locale = Locale.current
         numberFormatter.maximumFractionDigits = 0
         let measurementFormatter = MeasurementFormatter()
         measurementFormatter.numberFormatter = numberFormatter
@@ -53,6 +56,8 @@ class MainViewController: UIViewController {
         self.minTemperatureLabel.localizedValue(identifier: "Min_Temp_Label", value: minTemperature, defaultValue: AppContants.temperatureNoValue)
         let pressure = measurementFormatter.string(from: weather.pressure)
         self.pressureLabel.localizedValue(identifier: "Pressure_Label", value: pressure, defaultValue: AppContants.pressureNoValue)
+        let humidity = numberFormatter.string(for: weather.humidity)
+        self.humidityLabel.localizedValue(identifier: "Humidity_Label", value: humidity, defaultValue: AppContants.humidityNoValue)
     }
 
     @IBAction func didTapAddCity(_ sender: UIBarButtonItem) {

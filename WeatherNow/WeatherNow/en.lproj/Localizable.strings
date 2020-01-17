@@ -10,6 +10,7 @@
 "Max_Temp_Label" = "Max: %@";
 "Min_Temp_Label" = "Min: %@";
 "Pressure_Label" = "Pressure: %@";
+"Humidity_Label" = "Humidity: %@%%";
 
 // MARK: - CitySelectionTableViewController
 "Navigation_Title" = "My cities";
