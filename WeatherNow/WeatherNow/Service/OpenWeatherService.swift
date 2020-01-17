@@ -12,15 +12,18 @@ import Alamofire
 class OpenWeatherService {
 
     func getData(completion: @escaping (Weather?) -> Void) {
+
         guard let url = URL(string: APIConstants.url) else {
             completion(nil)
             return
         }
 
+        let language = getLocalization()
+
         let params: [String:String] = ["q": "Campinas",
                                        "appid": "",
                                        "units": "metric",
-                                       "lang": "en_us"]
+                                       "lang": language]
 
         Alamofire.request(url, method: .get, parameters: params).validate().responseData { response in
             switch response.result {
@@ -43,5 +46,13 @@ class OpenWeatherService {
                 completion(nil)
             }
         }
+    }
+
+    func getLocalization() -> String {
+        guard let collatorId = NSLocale.current.collatorIdentifier else {
+            return "en-US"
+        }
+
+        return NSLocale.preferredLanguages.contains(collatorId) ? NSLocale.current.identifier : "en-US"
     }
 }
