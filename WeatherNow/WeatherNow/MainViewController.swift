@@ -52,7 +52,7 @@ class MainViewController: UIViewController {
 
         self.currentTemperatureLabel.text = measurementFormatter.string(for: weather.currentTemperature)
         self.cityNameLabel.text = String.init(format: AppContants.cityName, weather.cityName, weather.countryName)
-        self.weatherDescriptionLabel.text = weather.description
+        self.weatherDescriptionLabel.text = weather.description.firstLetterCapitalized
 
         let maxTemperature = measurementFormatter.string(from: weather.maxTemperature)
         self.maxTemperatureLabel.localizedValue(identifier: "Max_Temp_Label", value: maxTemperature, defaultValue: AppContants.temperatureNoValue)
