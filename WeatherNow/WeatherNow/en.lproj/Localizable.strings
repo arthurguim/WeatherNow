@@ -11,9 +11,3 @@
 "Min_Temp_Label" = "Min: %@";
 "Pressure_Label" = "Pressure: %@";
 "Humidity_Label" = "Humidity: %@%%";
-
-// MARK: - CitySelectionTableViewController
-"Navigation_Title" = "My cities";
-"Group_TableView_Header_Title" = "Citys selected";
-"Group_TableView_Footer_Title" = "Add a new city to show in the main screen";
-"Add_City_Text_Label_Cell" = "Add city";

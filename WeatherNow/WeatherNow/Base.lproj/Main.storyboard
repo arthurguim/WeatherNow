@@ -119,13 +119,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hKK-rZ-Ccd"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Weather Now" id="2gj-Ol-6J9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="DLj-kS-AZ7">
-                            <connections>
-                                <action selector="didTapAddCity:" destination="mBv-G8-sOg" id="Llp-Uj-hL9"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Weather Now" id="2gj-Ol-6J9"/>
                     <connections>
                         <outlet property="activityIndicator" destination="dwK-w2-bhn" id="Q1h-HR-cCe"/>
                         <outlet property="cityNameLabel" destination="rUu-zJ-LdX" id="dl7-wf-efD"/>

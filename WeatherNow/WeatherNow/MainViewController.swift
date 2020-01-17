@@ -65,12 +65,6 @@ class MainViewController: UIViewController {
 
         self.activityIndicator.stopAnimating()
     }
-
-    // MARK: - Actions
-    @IBAction func didTapAddCity(_ sender: UIBarButtonItem) {
-        let citySelectionViewController = CitySelectionTableViewController(style: .grouped)
-        self.navigationController?.pushViewController(citySelectionViewController, animated: true)
-    }
 }
 
 // MARK: - CLLocationManagerDelegate
