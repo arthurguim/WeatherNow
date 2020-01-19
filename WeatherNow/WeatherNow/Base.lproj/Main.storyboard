@@ -44,6 +44,9 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dwK-w2-bhn">
+                                <rect key="frame" x="335" y="64" width="20" height="20"/>
+                            </activityIndicatorView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUu-zJ-LdX" userLabel="City Label">
                                 <rect key="frame" x="16" y="216" width="46" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -64,7 +67,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Min: --°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c0R-H1-pou" userLabel="Min Temp Label">
-                                <rect key="frame" x="16" y="285" width="60" height="21"/>
+                                <rect key="frame" x="16" y="285" width="60" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -82,15 +85,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dkN-jE-ehl" userLabel="Second Separator View">
-                                <rect key="frame" x="10" y="314" width="355" height="1"/>
+                                <rect key="frame" x="10" y="313.5" width="355" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="1" id="YUi-sx-I3r"/>
                                 </constraints>
                             </view>
-                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dwK-w2-bhn">
-                                <rect key="frame" x="335" y="64" width="20" height="20"/>
-                            </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5D-Vn-Qu3" userLabel="Error Label">
+                                <rect key="frame" x="50" y="444.5" width="275" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -98,6 +104,7 @@
                             <constraint firstItem="qri-aj-hbp" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="16" id="4ZB-BV-qch"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="rMV-pl-qPr" secondAttribute="trailing" constant="10" id="ANb-iv-kMe"/>
                             <constraint firstItem="dkN-jE-ehl" firstAttribute="top" secondItem="c0R-H1-pou" secondAttribute="bottom" constant="8" id="AOU-rj-eO1"/>
+                            <constraint firstItem="h5D-Vn-Qu3" firstAttribute="top" secondItem="dkN-jE-ehl" secondAttribute="bottom" constant="130" id="Ha5-8i-bRT"/>
                             <constraint firstItem="qri-aj-hbp" firstAttribute="top" secondItem="rMV-pl-qPr" secondAttribute="bottom" constant="8" id="HaM-sa-vN5"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="top" secondItem="P17-Sr-eeC" secondAttribute="bottom" constant="10" id="Hal-Tl-WSo"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="top" secondItem="qri-aj-hbp" secondAttribute="bottom" constant="10" id="R11-S8-Xde"/>
@@ -108,6 +115,7 @@
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="N6s-yX-v22" secondAttribute="bottom" constant="50" id="Wql-RQ-7DY"/>
                             <constraint firstItem="Sbj-Rx-SFo" firstAttribute="centerY" secondItem="qri-aj-hbp" secondAttribute="centerY" id="Xcb-wM-WeY"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="centerX" secondItem="P17-Sr-eeC" secondAttribute="centerX" id="ZFC-Yh-1Tb"/>
+                            <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="h5D-Vn-Qu3" secondAttribute="trailing" constant="50" id="a5s-vv-CtN"/>
                             <constraint firstItem="dwK-w2-bhn" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="20" id="bUX-6H-CED"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="leading" secondItem="qri-aj-hbp" secondAttribute="leading" id="e9B-qn-NS0"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="rUu-zJ-LdX" secondAttribute="bottom" constant="8" id="k4v-bZ-S0u"/>
@@ -115,6 +123,7 @@
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="10" id="nQc-C7-09L"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="dwK-w2-bhn" secondAttribute="trailing" constant="20" id="rMm-0i-jnl"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="Sbj-Rx-SFo" secondAttribute="trailing" constant="16" id="rQQ-GY-ZcL"/>
+                            <constraint firstItem="h5D-Vn-Qu3" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="50" id="tR0-et-EQl"/>
                             <constraint firstItem="rUu-zJ-LdX" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="16" id="wls-GO-mrz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hKK-rZ-Ccd"/>
@@ -130,6 +139,7 @@
                         <outlet property="activityIndicator" destination="dwK-w2-bhn" id="Q1h-HR-cCe"/>
                         <outlet property="cityNameLabel" destination="rUu-zJ-LdX" id="dl7-wf-efD"/>
                         <outlet property="currentTemperatureLabel" destination="P17-Sr-eeC" id="yhG-Dg-tBu"/>
+                        <outlet property="errorLabel" destination="h5D-Vn-Qu3" id="GIa-os-JLP"/>
                         <outlet property="humidityLabel" destination="zg8-4l-5G8" id="AN0-At-umF"/>
                         <outlet property="maxTemperatureLabel" destination="qri-aj-hbp" id="ZHx-ce-lZy"/>
                         <outlet property="minTemperatureLabel" destination="c0R-H1-pou" id="uQl-6B-UTg"/>

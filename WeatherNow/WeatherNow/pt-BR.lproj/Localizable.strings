@@ -11,3 +11,7 @@
 "Min_Temp_Label" = "Mín: %@";
 "Pressure_Label" = "Pressão: %@";
 "Humidity_Label" = "Humidade: %@%%";
+
+// MARK: - Errors
+"Fetch_Location" = "Ah, não! Não consegui os dados de sua localização. Por favor, tente novamente mais tarde";
+"Fetch_Weather" = "Ah, não! Não consegui as informações do tempo. Por favor, tente novamente mais tarde";

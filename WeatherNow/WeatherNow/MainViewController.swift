@@ -20,6 +20,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var cityNameLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
+    @IBOutlet weak var errorLabel: UILabel!
 
     // MARK: - Local parameters
     var weatherService: OpenWeatherService?
@@ -63,7 +64,7 @@ class MainViewController: UIViewController {
         let humidity = numberFormatter.string(for: weather.humidity)
         self.humidityLabel.localizedValue(identifier: "Humidity_Label", value: humidity, defaultValue: AppContants.humidityNoValue)
 
-        self.activityIndicator.stopAnimating()
+        self.errorLabel.isHidden = true
     }
 
     // MARK: - Actions
@@ -98,13 +99,22 @@ extension MainViewController: CLLocationManagerDelegate {
         let latitude = String(location.coordinate.latitude)
         let longitude = String(location.coordinate.longitude)
         self.weatherService?.getData(lat: latitude, lon: longitude, completion: { weather in
-            guard let weather = weather else { return }
+            self.activityIndicator.stopAnimating()
+
+            guard let weather = weather else {
+                self.errorLabel.text = NSLocalizedString("Fetch_Weather", comment: "")
+                self.errorLabel.isHidden = false
+                return
+            }
             self.updateView(weather: weather)
         })
     }
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
+        self.errorLabel.text = NSLocalizedString("Fetch_Location", comment: "")
+        self.errorLabel.isHidden = false
+        self.activityIndicator.stopAnimating()
         return
     }
 }
