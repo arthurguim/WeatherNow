@@ -53,6 +53,12 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Feels like: --°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LAW-I5-MQ0" userLabel="Feels Like Label">
+                                <rect key="frame" x="257" y="216" width="102" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMV-pl-qPr" userLabel="First Separation View">
                                 <rect key="frame" x="10" y="245" width="355" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -107,6 +113,7 @@
                             <constraint firstItem="h5D-Vn-Qu3" firstAttribute="top" secondItem="dkN-jE-ehl" secondAttribute="bottom" constant="130" id="Ha5-8i-bRT"/>
                             <constraint firstItem="qri-aj-hbp" firstAttribute="top" secondItem="rMV-pl-qPr" secondAttribute="bottom" constant="8" id="HaM-sa-vN5"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="top" secondItem="P17-Sr-eeC" secondAttribute="bottom" constant="10" id="Hal-Tl-WSo"/>
+                            <constraint firstItem="LAW-I5-MQ0" firstAttribute="centerY" secondItem="rUu-zJ-LdX" secondAttribute="centerY" id="JCH-T2-eQO"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="top" secondItem="qri-aj-hbp" secondAttribute="bottom" constant="10" id="R11-S8-Xde"/>
                             <constraint firstItem="zg8-4l-5G8" firstAttribute="centerY" secondItem="c0R-H1-pou" secondAttribute="centerY" id="S9y-pf-FJi"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="50" id="SJw-TF-fok"/>
@@ -116,6 +123,7 @@
                             <constraint firstItem="Sbj-Rx-SFo" firstAttribute="centerY" secondItem="qri-aj-hbp" secondAttribute="centerY" id="Xcb-wM-WeY"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="centerX" secondItem="P17-Sr-eeC" secondAttribute="centerX" id="ZFC-Yh-1Tb"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="h5D-Vn-Qu3" secondAttribute="trailing" constant="50" id="a5s-vv-CtN"/>
+                            <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="LAW-I5-MQ0" secondAttribute="trailing" constant="16" id="aHV-Al-MLU"/>
                             <constraint firstItem="dwK-w2-bhn" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="20" id="bUX-6H-CED"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="leading" secondItem="qri-aj-hbp" secondAttribute="leading" id="e9B-qn-NS0"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="rUu-zJ-LdX" secondAttribute="bottom" constant="8" id="k4v-bZ-S0u"/>
@@ -140,6 +148,7 @@
                         <outlet property="cityNameLabel" destination="rUu-zJ-LdX" id="dl7-wf-efD"/>
                         <outlet property="currentTemperatureLabel" destination="P17-Sr-eeC" id="yhG-Dg-tBu"/>
                         <outlet property="errorLabel" destination="h5D-Vn-Qu3" id="GIa-os-JLP"/>
+                        <outlet property="feelsLikeLabel" destination="LAW-I5-MQ0" id="ICb-te-RRT"/>
                         <outlet property="humidityLabel" destination="zg8-4l-5G8" id="AN0-At-umF"/>
                         <outlet property="maxTemperatureLabel" destination="qri-aj-hbp" id="ZHx-ce-lZy"/>
                         <outlet property="minTemperatureLabel" destination="c0R-H1-pou" id="uQl-6B-UTg"/>

@@ -11,6 +11,7 @@
 "Min_Temp_Label" = "Min: %@";
 "Pressure_Label" = "Pressure: %@";
 "Humidity_Label" = "Humidity: %@%%";
+"Feels_Like_Label" = "Feels like: %@";
 
 // MARK: - Errors
 "Fetch_Location" = "Oh, no! I couldn`t fetch your location. Please, try again later";

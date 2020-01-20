@@ -18,6 +18,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var maxTemperatureLabel: UILabel!
     @IBOutlet weak var minTemperatureLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var feelsLikeLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var errorLabel: UILabel!
@@ -42,6 +43,7 @@ class MainViewController: UIViewController {
         self.minTemperatureLabel.localizedValue(identifier: "Min_Temp_Label", defaultValue: AppContants.temperatureNoValue)
         self.pressureLabel.localizedValue(identifier: "Pressure_Label", defaultValue: AppContants.pressureNoValue)
         self.humidityLabel.localizedValue(identifier: "Humidity_Label", defaultValue: AppContants.humidityNoValue)
+        self.feelsLikeLabel.localizedValue(identifier: "Feels_Like_Label", defaultValue: AppContants.temperatureNoValue)
     }
 
     func updateView(weather: Weather) {
@@ -59,6 +61,8 @@ class MainViewController: UIViewController {
         self.maxTemperatureLabel.localizedValue(identifier: "Max_Temp_Label", value: maxTemperature, defaultValue: AppContants.temperatureNoValue)
         let minTemperature = measurementFormatter.string(from: weather.minTemperature)
         self.minTemperatureLabel.localizedValue(identifier: "Min_Temp_Label", value: minTemperature, defaultValue: AppContants.temperatureNoValue)
+        let feelsLike = measurementFormatter.string(from: weather.feelsLike)
+        self.feelsLikeLabel.localizedValue(identifier: "Feels_Like_Label", value: feelsLike, defaultValue: AppContants.temperatureNoValue)
         let pressure = measurementFormatter.string(from: weather.pressure)
         self.pressureLabel.localizedValue(identifier: "Pressure_Label", value: pressure, defaultValue: AppContants.pressureNoValue)
         let humidity = numberFormatter.string(for: weather.humidity)
