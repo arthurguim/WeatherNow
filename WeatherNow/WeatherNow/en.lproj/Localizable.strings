@@ -13,6 +13,10 @@
 "Humidity_Label" = "Humidity: %@%%";
 "Feels_Like_Label" = "Feels like: %@";
 
-// MARK: - Errors
-"Fetch_Location" = "Oh, no! I couldn`t fetch your location. Please, try again later";
-"Fetch_Weather" = "Oh, no! I couldn`t fetch the weather information. Please, try again later";
+// MARK: - Messages
+"Fetch_Location_Title" = "Oh, no! I couldn`t fetch your location";
+"Fetch_Location_Message" = "Please, try again later";
+"Fetch_Weather_Title" = "Oh, no! I couldn`t fetch the weather information";
+"Fetch_Weather_Message" = "Please, try again later";
+"Permition_Not_Granted_Title" = "Unfortunatelly you didn't allow the app to get your location";
+"Permition_Not_Granted_Message" = "We can't display the weather :'(";

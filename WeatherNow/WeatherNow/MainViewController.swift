@@ -21,12 +21,15 @@ class MainViewController: UIViewController {
     @IBOutlet weak var feelsLikeLabel: UILabel!
     @IBOutlet weak var pressureLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
-    @IBOutlet weak var errorLabel: UILabel!
+    @IBOutlet weak var messageTitleLabel: UILabel!
+    @IBOutlet weak var messageLabel: UILabel!
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
 
     // MARK: - Local parameters
     var weatherService: OpenWeatherService?
     var locationManager: CLLocationManager?
 
+    // MARK: - View life cycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -38,6 +41,7 @@ class MainViewController: UIViewController {
         localizeLabels()
     }
 
+    // MARK: - Local functions
     func localizeLabels() {
         self.maxTemperatureLabel.localizedValue(identifier: "Max_Temp_Label", defaultValue: AppContants.temperatureNoValue)
         self.minTemperatureLabel.localizedValue(identifier: "Min_Temp_Label", defaultValue: AppContants.temperatureNoValue)
@@ -68,11 +72,23 @@ class MainViewController: UIViewController {
         let humidity = numberFormatter.string(for: weather.humidity)
         self.humidityLabel.localizedValue(identifier: "Humidity_Label", value: humidity, defaultValue: AppContants.humidityNoValue)
 
-        self.errorLabel.isHidden = true
+        self.messageTitleLabel.isHidden = true
+        self.messageLabel.isHidden = true
+    }
+
+    func setMessage(titleKey: String, messageKey: String) {
+        self.messageTitleLabel.text = NSLocalizedString(titleKey, comment: "")
+        self.messageLabel.text = NSLocalizedString(messageKey, comment: "")
+        self.messageTitleLabel.isHidden = false
+        self.messageLabel.isHidden = false
     }
 
     // MARK: - Actions
     @IBAction func didTapRefreshButton(_ sender: Any) {
+        if CLLocationManager.authorizationStatus() == .denied {
+            return
+        }
+
         if self.activityIndicator.isAnimating {
             return
         }
@@ -86,12 +102,20 @@ class MainViewController: UIViewController {
 extension MainViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
-        if status == CLAuthorizationStatus.authorizedWhenInUse {
+
+        switch status {
+        case .authorizedWhenInUse:
+            self.refreshButton.isEnabled = true
             self.activityIndicator.startAnimating()
             self.locationManager?.requestLocation()
-
-        } else if status == CLAuthorizationStatus.notDetermined {
+        case .notDetermined:
             self.locationManager?.requestWhenInUseAuthorization()
+            self.refreshButton.isEnabled = false
+        case .denied:
+            self.setMessage(titleKey: "Permition_Not_Granted_Title", messageKey: "Permition_Not_Granted_Message")
+            self.refreshButton.isEnabled = false
+        default:
+            return
         }
     }
 
@@ -106,8 +130,7 @@ extension MainViewController: CLLocationManagerDelegate {
             self.activityIndicator.stopAnimating()
 
             guard let weather = weather else {
-                self.errorLabel.text = NSLocalizedString("Fetch_Weather", comment: "")
-                self.errorLabel.isHidden = false
+                self.setMessage(titleKey: "Fetch_Weather_Title", messageKey: "Fetch_Weather_Message")
                 return
             }
             self.updateView(weather: weather)
@@ -116,8 +139,7 @@ extension MainViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
-        self.errorLabel.text = NSLocalizedString("Fetch_Location", comment: "")
-        self.errorLabel.isHidden = false
+        self.setMessage(titleKey: "Fetch_Location_Title", messageKey: "Fetch_Location_Message")
         self.activityIndicator.stopAnimating()
         return
     }

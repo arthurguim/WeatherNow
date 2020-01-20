@@ -97,9 +97,15 @@
                                     <constraint firstAttribute="height" constant="1" id="YUi-sx-I3r"/>
                                 </constraints>
                             </view>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5D-Vn-Qu3" userLabel="Error Label">
-                                <rect key="frame" x="50" y="444.5" width="275" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5D-Vn-Qu3" userLabel="Message Title Label">
+                                <rect key="frame" x="35" y="444.5" width="305" height="18"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mb2-vS-hri" userLabel="Message Label">
+                                <rect key="frame" x="158.5" y="466.5" width="58" height="17"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -116,6 +122,7 @@
                             <constraint firstItem="qri-aj-hbp" firstAttribute="top" secondItem="rMV-pl-qPr" secondAttribute="bottom" constant="8" id="HaM-sa-vN5"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="top" secondItem="P17-Sr-eeC" secondAttribute="bottom" constant="10" id="Hal-Tl-WSo"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="top" secondItem="qri-aj-hbp" secondAttribute="bottom" constant="10" id="R11-S8-Xde"/>
+                            <constraint firstItem="Mb2-vS-hri" firstAttribute="top" secondItem="h5D-Vn-Qu3" secondAttribute="bottom" constant="4" id="R1u-TC-Awi"/>
                             <constraint firstItem="zg8-4l-5G8" firstAttribute="centerY" secondItem="c0R-H1-pou" secondAttribute="centerY" id="S9y-pf-FJi"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="50" id="SJw-TF-fok"/>
                             <constraint firstItem="zg8-4l-5G8" firstAttribute="leading" secondItem="Sbj-Rx-SFo" secondAttribute="leading" id="SqM-Zo-p5h"/>
@@ -123,21 +130,22 @@
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="N6s-yX-v22" secondAttribute="bottom" constant="50" id="Wql-RQ-7DY"/>
                             <constraint firstItem="Sbj-Rx-SFo" firstAttribute="centerY" secondItem="qri-aj-hbp" secondAttribute="centerY" id="Xcb-wM-WeY"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="centerX" secondItem="P17-Sr-eeC" secondAttribute="centerX" id="ZFC-Yh-1Tb"/>
-                            <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="h5D-Vn-Qu3" secondAttribute="trailing" constant="50" id="a5s-vv-CtN"/>
+                            <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="h5D-Vn-Qu3" secondAttribute="trailing" constant="35" id="a5s-vv-CtN"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="LAW-I5-MQ0" secondAttribute="trailing" constant="16" id="aHV-Al-MLU"/>
                             <constraint firstItem="dwK-w2-bhn" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="20" id="bUX-6H-CED"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="Lkh-D9-Dwp" secondAttribute="bottom" constant="8" id="cxU-AG-4sk"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="leading" secondItem="qri-aj-hbp" secondAttribute="leading" id="e9B-qn-NS0"/>
+                            <constraint firstItem="Mb2-vS-hri" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="iUu-Mt-kcj"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="kHe-4q-e7f"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="10" id="nQc-C7-09L"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="dwK-w2-bhn" secondAttribute="trailing" constant="20" id="rMm-0i-jnl"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="Sbj-Rx-SFo" secondAttribute="trailing" constant="16" id="rQQ-GY-ZcL"/>
-                            <constraint firstItem="h5D-Vn-Qu3" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="50" id="tR0-et-EQl"/>
+                            <constraint firstItem="h5D-Vn-Qu3" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="35" id="tR0-et-EQl"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hKK-rZ-Ccd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather Now" id="2gj-Ol-6J9">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="wjM-oO-KOb">
+                        <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="refresh" id="wjM-oO-KOb">
                             <connections>
                                 <action selector="didTapRefreshButton:" destination="mBv-G8-sOg" id="MdZ-9U-7ZY"/>
                             </connections>
@@ -147,12 +155,14 @@
                         <outlet property="activityIndicator" destination="dwK-w2-bhn" id="Q1h-HR-cCe"/>
                         <outlet property="cityNameLabel" destination="Lkh-D9-Dwp" id="8NX-LY-Ryi"/>
                         <outlet property="currentTemperatureLabel" destination="P17-Sr-eeC" id="yhG-Dg-tBu"/>
-                        <outlet property="errorLabel" destination="h5D-Vn-Qu3" id="GIa-os-JLP"/>
                         <outlet property="feelsLikeLabel" destination="LAW-I5-MQ0" id="ICb-te-RRT"/>
                         <outlet property="humidityLabel" destination="zg8-4l-5G8" id="AN0-At-umF"/>
                         <outlet property="maxTemperatureLabel" destination="qri-aj-hbp" id="ZHx-ce-lZy"/>
+                        <outlet property="messageLabel" destination="Mb2-vS-hri" id="b2R-mH-HfT"/>
+                        <outlet property="messageTitleLabel" destination="h5D-Vn-Qu3" id="GIa-os-JLP"/>
                         <outlet property="minTemperatureLabel" destination="c0R-H1-pou" id="uQl-6B-UTg"/>
                         <outlet property="pressureLabel" destination="Sbj-Rx-SFo" id="igC-Yy-Y4b"/>
+                        <outlet property="refreshButton" destination="wjM-oO-KOb" id="i1V-DO-6tk"/>
                         <outlet property="weatherDescriptionLabel" destination="N6s-yX-v22" id="33x-a7-NZt"/>
                     </connections>
                 </viewController>

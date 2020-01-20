@@ -14,5 +14,9 @@
 "Feels_Like_Label" = "Sensação térmica: %@";
 
 // MARK: - Errors
-"Fetch_Location" = "Ah, não! Não consegui os dados de sua localização. Por favor, tente novamente mais tarde";
-"Fetch_Weather" = "Ah, não! Não consegui as informações do tempo. Por favor, tente novamente mais tarde";
+"Fetch_Location_Title" = "Ah, não! Não consegui os dados de sua localização";
+"Fetch_Location_Message" = "Por favor, tente novamente mais tarde";
+"Fetch_Weather_Title" = "Ah, não! Não consegui as informações do tempo";
+"Fetch_Weather_Message" = "Por favor, tente novamente mais tarde";
+"Permition_Not_Granted_Title" = "Infelizmente você não permitiu o app coletar sua localização";
+"Permition_Not_Granted_Message" = "Não é possível mostrar o tempo :'(";
