@@ -47,8 +47,8 @@
                             <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="dwK-w2-bhn">
                                 <rect key="frame" x="335" y="64" width="20" height="20"/>
                             </activityIndicatorView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rUu-zJ-LdX" userLabel="City Label">
-                                <rect key="frame" x="16" y="216" width="46" height="21"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="-----" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lkh-D9-Dwp" userLabel="City Label">
+                                <rect key="frame" x="16" y="216" width="38.5" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -108,12 +108,13 @@
                         <constraints>
                             <constraint firstItem="dkN-jE-ehl" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="10" id="2SN-7k-fJg"/>
                             <constraint firstItem="qri-aj-hbp" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="16" id="4ZB-BV-qch"/>
+                            <constraint firstItem="Lkh-D9-Dwp" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="16" id="9wf-r3-u9o"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="rMV-pl-qPr" secondAttribute="trailing" constant="10" id="ANb-iv-kMe"/>
                             <constraint firstItem="dkN-jE-ehl" firstAttribute="top" secondItem="c0R-H1-pou" secondAttribute="bottom" constant="8" id="AOU-rj-eO1"/>
+                            <constraint firstItem="LAW-I5-MQ0" firstAttribute="centerY" secondItem="Lkh-D9-Dwp" secondAttribute="centerY" id="BE3-fg-AC3"/>
                             <constraint firstItem="h5D-Vn-Qu3" firstAttribute="top" secondItem="dkN-jE-ehl" secondAttribute="bottom" constant="130" id="Ha5-8i-bRT"/>
                             <constraint firstItem="qri-aj-hbp" firstAttribute="top" secondItem="rMV-pl-qPr" secondAttribute="bottom" constant="8" id="HaM-sa-vN5"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="top" secondItem="P17-Sr-eeC" secondAttribute="bottom" constant="10" id="Hal-Tl-WSo"/>
-                            <constraint firstItem="LAW-I5-MQ0" firstAttribute="centerY" secondItem="rUu-zJ-LdX" secondAttribute="centerY" id="JCH-T2-eQO"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="top" secondItem="qri-aj-hbp" secondAttribute="bottom" constant="10" id="R11-S8-Xde"/>
                             <constraint firstItem="zg8-4l-5G8" firstAttribute="centerY" secondItem="c0R-H1-pou" secondAttribute="centerY" id="S9y-pf-FJi"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="50" id="SJw-TF-fok"/>
@@ -125,14 +126,13 @@
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="h5D-Vn-Qu3" secondAttribute="trailing" constant="50" id="a5s-vv-CtN"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="LAW-I5-MQ0" secondAttribute="trailing" constant="16" id="aHV-Al-MLU"/>
                             <constraint firstItem="dwK-w2-bhn" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="20" id="bUX-6H-CED"/>
+                            <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="Lkh-D9-Dwp" secondAttribute="bottom" constant="8" id="cxU-AG-4sk"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="leading" secondItem="qri-aj-hbp" secondAttribute="leading" id="e9B-qn-NS0"/>
-                            <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="rUu-zJ-LdX" secondAttribute="bottom" constant="8" id="k4v-bZ-S0u"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="kHe-4q-e7f"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="10" id="nQc-C7-09L"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="dwK-w2-bhn" secondAttribute="trailing" constant="20" id="rMm-0i-jnl"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="Sbj-Rx-SFo" secondAttribute="trailing" constant="16" id="rQQ-GY-ZcL"/>
                             <constraint firstItem="h5D-Vn-Qu3" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="50" id="tR0-et-EQl"/>
-                            <constraint firstItem="rUu-zJ-LdX" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="16" id="wls-GO-mrz"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="hKK-rZ-Ccd"/>
                     </view>
@@ -145,7 +145,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="activityIndicator" destination="dwK-w2-bhn" id="Q1h-HR-cCe"/>
-                        <outlet property="cityNameLabel" destination="rUu-zJ-LdX" id="dl7-wf-efD"/>
+                        <outlet property="cityNameLabel" destination="Lkh-D9-Dwp" id="8NX-LY-Ryi"/>
                         <outlet property="currentTemperatureLabel" destination="P17-Sr-eeC" id="yhG-Dg-tBu"/>
                         <outlet property="errorLabel" destination="h5D-Vn-Qu3" id="GIa-os-JLP"/>
                         <outlet property="feelsLikeLabel" destination="LAW-I5-MQ0" id="ICb-te-RRT"/>
