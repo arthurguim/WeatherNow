@@ -106,6 +106,8 @@ extension MainViewController: CLLocationManagerDelegate {
         switch status {
         case .authorizedWhenInUse:
             self.refreshButton.isEnabled = true
+            self.messageTitleLabel.isHidden = true
+            self.messageLabel.isHidden = true
             self.activityIndicator.startAnimating()
             self.locationManager?.requestLocation()
         case .notDetermined:
