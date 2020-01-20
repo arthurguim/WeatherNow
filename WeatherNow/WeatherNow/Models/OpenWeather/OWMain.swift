@@ -13,7 +13,6 @@ struct OWMain: Decodable {
     let temp_min: Double
     let temp_max: Double
     let feels_like: Double
-    let pressure: Double
     let humidity: Double
 
     var currentTemperature: Measurement<UnitTemperature> {
@@ -41,13 +40,6 @@ struct OWMain: Decodable {
         get {
             let temperature = Measurement.init(value: self.feels_like, unit: UnitTemperature.celsius)
             return temperature
-        }
-    }
-
-    var currentPressure: Measurement<UnitPressure> {
-        get {
-            let pressure = Measurement.init(value: self.pressure, unit: UnitPressure.hectopascals)
-            return pressure
         }
     }
 }

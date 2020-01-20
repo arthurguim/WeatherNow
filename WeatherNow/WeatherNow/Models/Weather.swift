@@ -16,7 +16,6 @@ struct Weather {
     let maxTemperature: Measurement<UnitTemperature>
     let minTemperature: Measurement<UnitTemperature>
     let feelsLike: Measurement<UnitTemperature>
-    let pressure: Measurement<UnitPressure>
     let humidity: Double
 
     init(data: OWData) {
@@ -27,7 +26,6 @@ struct Weather {
         self.maxTemperature = data.main.maxTemperature
         self.minTemperature = data.main.minTemperature
         self.feelsLike = data.main.feelsLike
-        self.pressure = data.main.currentPressure
         self.humidity = data.main.humidity
     }
 }
