@@ -11,6 +11,5 @@ import Foundation
 struct OWData: Decodable {
     let weather: [OWWeather]
     let main: OWMain
-    let sys: OWSys
     let name: String
 }
