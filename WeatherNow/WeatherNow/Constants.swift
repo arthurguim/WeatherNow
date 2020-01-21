@@ -8,6 +8,7 @@
 
 import Foundation
 
+// MARK: - API constants
 struct APIConstants {
     static let openWeatherUrl: String = "https://api.openweathermap.org/data/2.5/weather"
     static let latitudeKey: String = "lat"
@@ -20,7 +21,15 @@ struct APIConstants {
     static let usEnglishLanguage: String = "en-US"
 }
 
+// MARK: - App constants
 struct AppContants {
     static let temperatureNoValue: String = "--°"
     static let humidityNoValue: String = "--"
+}
+
+// MARK: - InfoViewController constants
+struct InfoConstants {
+    static let freepikUrl = "https://www.flaticon.com/authors/freepik"
+    static let flatIconUrl = "https://www.flaticon.com/"
+    static let openWeatherMapUrl = "https://openweathermap.org/"
 }

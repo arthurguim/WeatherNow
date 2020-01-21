@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		187370A4CAD01C2A3F7FEB9F /* Pods_WeatherNow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C86D034F01A680A385F18C4 /* Pods_WeatherNow.framework */; };
+		990513C223D7295B007A4239 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990513C123D7295B007A4239 /* InfoViewController.swift */; };
 		991555A223D0F71500D93CCC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991555A423D0F71500D93CCC /* Localizable.strings */; };
 		993D57CB23D1E3E40091EC92 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D57CA23D1E3E40091EC92 /* UILabel+Extension.swift */; };
 		99706F1D23D230BB00086F82 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99706F1C23D230BB00086F82 /* String+Extension.swift */; };
@@ -27,6 +28,7 @@
 
 /* Begin PBXFileReference section */
 		2C86D034F01A680A385F18C4 /* Pods_WeatherNow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherNow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		990513C123D7295B007A4239 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
 		991555A323D0F71500D93CCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		991555A523D0F74E00D93CCC /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		993D57CA23D1E3E40091EC92 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -70,6 +72,14 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		990513C023D72949007A4239 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				990513C123D7295B007A4239 /* InfoViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
 		993D57C923D1E3B40091EC92 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -109,6 +119,7 @@
 		E379B0F5235CB96D00E2C28C /* WeatherNow */ = {
 			isa = PBXGroup;
 			children = (
+				990513C023D72949007A4239 /* ViewControllers */,
 				993D57C923D1E3B40091EC92 /* Extensions */,
 				E379B118235CC02800E2C28C /* Service */,
 				E379B108235CBAD500E2C28C /* Models */,
@@ -271,6 +282,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				993D57CB23D1E3E40091EC92 /* UILabel+Extension.swift in Sources */,
+				990513C223D7295B007A4239 /* InfoViewController.swift in Sources */,
 				99706F1D23D230BB00086F82 /* String+Extension.swift in Sources */,
 				E3925F1E235CD03E00BE7876 /* Constants.swift in Sources */,
 				E3E35B80235CD5D0002E1FD9 /* MainViewController.swift in Sources */,

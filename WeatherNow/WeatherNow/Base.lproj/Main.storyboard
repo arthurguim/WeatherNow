@@ -103,12 +103,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Icon made by Freepik from www.flaticon.com" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fCp-Yj-ZwC">
-                                <rect key="frame" x="101.5" y="647" width="172" height="10"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="8"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -132,12 +126,10 @@
                             <constraint firstItem="dwK-w2-bhn" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="20" id="bUX-6H-CED"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="Lkh-D9-Dwp" secondAttribute="bottom" constant="8" id="cxU-AG-4sk"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="LAW-I5-MQ0" secondAttribute="trailing" constant="16" id="d3C-ts-Cfa"/>
-                            <constraint firstItem="hKK-rZ-Ccd" firstAttribute="bottom" secondItem="fCp-Yj-ZwC" secondAttribute="bottom" constant="10" id="dUX-KD-AQX"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="leading" secondItem="qri-aj-hbp" secondAttribute="leading" id="e9B-qn-NS0"/>
                             <constraint firstItem="Mb2-vS-hri" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="iUu-Mt-kcj"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="kHe-4q-e7f"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="10" id="nQc-C7-09L"/>
-                            <constraint firstItem="fCp-Yj-ZwC" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="p1g-zW-HrZ"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="dwK-w2-bhn" secondAttribute="trailing" constant="20" id="rMm-0i-jnl"/>
                             <constraint firstItem="h5D-Vn-Qu3" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="35" id="tR0-et-EQl"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="zg8-4l-5G8" secondAttribute="trailing" priority="999" constant="16" id="xhq-hD-pG3"/>
@@ -146,6 +138,11 @@
                         <viewLayoutGuide key="safeArea" id="hKK-rZ-Ccd"/>
                     </view>
                     <navigationItem key="navigationItem" title="Weather Now" id="2gj-Ol-6J9">
+                        <barButtonItem key="leftBarButtonItem" title="Item" image="info.circle" catalog="system" id="x6Z-ow-yJ2" userLabel="Info">
+                            <connections>
+                                <segue destination="fm8-bM-mlr" kind="presentation" id="bLV-Fm-vog"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" enabled="NO" systemItem="refresh" id="wjM-oO-KOb">
                             <connections>
                                 <action selector="didTapRefreshButton:" destination="mBv-G8-sOg" id="MdZ-9U-7ZY"/>
@@ -171,5 +168,61 @@
             </objects>
             <point key="canvasLocation" x="485.60000000000002" y="43.628185907046479"/>
         </scene>
+        <!--Info View Controller-->
+        <scene sceneID="fHZ-jb-4eA">
+            <objects>
+                <viewController id="fm8-bM-mlr" customClass="InfoViewController" customModule="WeatherNow" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TxA-6O-V3s">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Weather Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BKs-Ot-UsF">
+                                <rect key="frame" x="128.5" y="10" width="118" height="23"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cqs-co-6jr" userLabel="Separator View">
+                                <rect key="frame" x="0.0" y="43" width="375" height="1"/>
+                                <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="P9O-CS-gng"/>
+                                </constraints>
+                            </view>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tzr-ZV-Mhr">
+                                <rect key="frame" x="10" y="54" width="355" height="593"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ch0-KK-R2i" firstAttribute="trailing" secondItem="Cqs-co-6jr" secondAttribute="trailing" id="4ub-p4-y66"/>
+                            <constraint firstItem="Tzr-ZV-Mhr" firstAttribute="leading" secondItem="ch0-KK-R2i" secondAttribute="leading" constant="10" id="IBt-Uw-0qS"/>
+                            <constraint firstItem="ch0-KK-R2i" firstAttribute="bottom" secondItem="Tzr-ZV-Mhr" secondAttribute="bottom" id="JaA-uM-GBN"/>
+                            <constraint firstItem="Tzr-ZV-Mhr" firstAttribute="top" secondItem="Cqs-co-6jr" secondAttribute="bottom" constant="10" id="MGz-TY-AVC"/>
+                            <constraint firstItem="BKs-Ot-UsF" firstAttribute="top" secondItem="ch0-KK-R2i" secondAttribute="top" constant="10" id="Y99-El-aNz"/>
+                            <constraint firstItem="Cqs-co-6jr" firstAttribute="leading" secondItem="ch0-KK-R2i" secondAttribute="leading" id="gr3-qT-DdG"/>
+                            <constraint firstItem="Cqs-co-6jr" firstAttribute="top" secondItem="BKs-Ot-UsF" secondAttribute="bottom" constant="10" id="sVc-cx-R3C"/>
+                            <constraint firstItem="BKs-Ot-UsF" firstAttribute="centerX" secondItem="TxA-6O-V3s" secondAttribute="centerX" id="vCr-Ku-vXB"/>
+                            <constraint firstItem="ch0-KK-R2i" firstAttribute="trailing" secondItem="Tzr-ZV-Mhr" secondAttribute="trailing" constant="10" id="zq6-Rl-QO2"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ch0-KK-R2i"/>
+                    </view>
+                    <connections>
+                        <outlet property="appNameLabel" destination="BKs-Ot-UsF" id="BAG-JK-DKv"/>
+                        <outlet property="infoTextView" destination="Tzr-ZV-Mhr" id="uBB-Em-dIa"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="g8L-zi-LjL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1234" y="44"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="info.circle" catalog="system" width="64" height="60"/>
+    </resources>
 </document>

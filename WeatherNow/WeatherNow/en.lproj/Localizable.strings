@@ -20,3 +20,6 @@
 "Fetch_Weather_Message" = "Please, try again later";
 "Permition_Not_Granted_Title" = "Unfortunatelly you didn't allow the app to get your location";
 "Permition_Not_Granted_Message" = "We can't display the weather :'(";
+
+// MARK: - InfoViewController
+"Info_Text" = "Weather information provided by OpenWeather.\n\nIcon made by Freepik from www.flaticon.com.";
