@@ -24,7 +24,7 @@ class InfoViewController: UIViewController {
     // MARK: - Local functions
     func setupView() {
         let attributedString = NSMutableAttributedString(string: NSLocalizedString("Info_Text", comment: ""), attributes: [
-            .foregroundColor: traitCollection.userInterfaceStyle == .light ? UIColor.black : UIColor.white
+            .foregroundColor: UIColor.label
         ])
         attributedString.addAttribute(.link, value: InfoConstants.openWeatherMapUrl, range: NSRange(location: 32, length: 11))
         attributedString.addAttribute(.link, value: InfoConstants.freepikUrl, range: NSRange(location: 59, length: 7))

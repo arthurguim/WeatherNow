@@ -15,8 +15,8 @@ A Simple Weather App for iOS, using [OpenWeather](https://openweathermap.org/) p
 | ![AAA](screenshots/Main_View_Light_Mode.png) | ![BB](screenshots/Main_View_Dark_Mode.png) |
 
 ## Requirements
-* iOS 12.1 or above
-* Swift 4
+* iOS 13.0 or above
+* Swift 5
 * Xcode 11.3
 
 ## Built with
