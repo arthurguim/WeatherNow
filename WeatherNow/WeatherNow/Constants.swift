@@ -13,6 +13,7 @@ struct APIConstants {
     static let latitudeKey: String = "lat"
     static let longitudeKey: String = "lon"
     static let apiKey = "appid"
+    static let apiKeyValue = ""
     static let unitKey = "units"
     static let unitValue: String = "metric"
     static let languageKey: String = "lang"

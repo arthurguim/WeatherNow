@@ -22,7 +22,7 @@ class OpenWeatherService {
 
         let params: [String:String] = [APIConstants.latitudeKey: lat,
                                        APIConstants.longitudeKey: lon,
-                                       APIConstants.apiKey: "",
+                                       APIConstants.apiKey: APIConstants.apiKeyValue,
                                        APIConstants.unitKey: APIConstants.unitValue,
                                        APIConstants.languageKey: language]
 
