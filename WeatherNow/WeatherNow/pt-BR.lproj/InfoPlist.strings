@@ -6,4 +6,5 @@
   Copyright © 2020 Arthur Silva. All rights reserved.
 */
 
+"CFBundleDisplayName" = "O Tempo Agora";
 "NSLocationWhenInUseUsageDescription" = "Usamos sua localização para mostrar o tempo em sua região.";

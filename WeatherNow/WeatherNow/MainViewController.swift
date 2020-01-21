@@ -12,6 +12,7 @@ import CoreLocation
 class MainViewController: UIViewController {
 
     // MARK: - Outlets
+    @IBOutlet weak var mainNavigationItem: UINavigationItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var currentTemperatureLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
@@ -42,6 +43,7 @@ class MainViewController: UIViewController {
 
     // MARK: - Local functions
     func localizeLabels() {
+        self.mainNavigationItem.title = Bundle.main.localizedInfoDictionary!["CFBundleDisplayName"] as? String
         self.maxTemperatureLabel.localizedValue(identifier: "Max_Temp_Label", defaultValue: AppContants.temperatureNoValue)
         self.minTemperatureLabel.localizedValue(identifier: "Min_Temp_Label", defaultValue: AppContants.temperatureNoValue)
         self.humidityLabel.localizedValue(identifier: "Humidity_Label", defaultValue: AppContants.humidityNoValue)

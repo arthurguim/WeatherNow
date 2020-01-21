@@ -158,6 +158,7 @@
                         <outlet property="currentTemperatureLabel" destination="P17-Sr-eeC" id="yhG-Dg-tBu"/>
                         <outlet property="feelsLikeLabel" destination="LAW-I5-MQ0" id="ICb-te-RRT"/>
                         <outlet property="humidityLabel" destination="zg8-4l-5G8" id="AN0-At-umF"/>
+                        <outlet property="mainNavigationItem" destination="2gj-Ol-6J9" id="EWN-Mj-fIG"/>
                         <outlet property="maxTemperatureLabel" destination="qri-aj-hbp" id="ZHx-ce-lZy"/>
                         <outlet property="messageLabel" destination="Mb2-vS-hri" id="b2R-mH-HfT"/>
                         <outlet property="messageTitleLabel" destination="h5D-Vn-Qu3" id="GIa-os-JLP"/>

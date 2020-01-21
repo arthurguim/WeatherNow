@@ -6,4 +6,5 @@
   Copyright © 2020 Arthur Silva. All rights reserved.
 */
 
+"CFBundleDisplayName" = "Weather Now";
 "NSLocationWhenInUseUsageDescription" = "Your location is used to show local weather.";
