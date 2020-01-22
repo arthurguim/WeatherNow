@@ -28,6 +28,7 @@ class MainViewController: UIViewController {
     // MARK: - Local parameters
     var weatherService: OpenWeatherService?
     var locationManager: CLLocationManager?
+    var cacheService: CacheService?
 
     // MARK: - View life cycle
     override func viewDidLoad() {
@@ -38,7 +39,8 @@ class MainViewController: UIViewController {
         self.locationManager = CLLocationManager()
         self.locationManager?.delegate = self
 
-        localizeLabels()
+        self.cacheService = CacheService()
+        self.displayCachedData()
     }
 
     // MARK: - Local functions
@@ -79,6 +81,21 @@ class MainViewController: UIViewController {
         self.messageLabel.text = NSLocalizedString(messageKey, comment: "")
         self.messageTitleLabel.isHidden = false
         self.messageLabel.isHidden = false
+    }
+
+    func displayCachedData() {
+        guard let data = self.cacheService?.loadData() else {
+            self.localizeLabels()
+            return
+        }
+
+        do {
+            let owData = try JSONDecoder().decode(OWData.self, from: data)
+            updateView(weather: Weather(data: owData))
+        } catch {
+            print("Error decoding cached data: \(error.localizedDescription)")
+            self.localizeLabels()
+        }
     }
 
     // MARK: - Actions

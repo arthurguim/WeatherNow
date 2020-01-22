@@ -11,6 +11,8 @@ import Alamofire
 
 class OpenWeatherService {
 
+    let cacheService = CacheService()
+
     func getData(lat: String, lon: String, completion: @escaping (Weather?) -> Void) {
 
         guard let url = URL(string: APIConstants.openWeatherUrl) else {
@@ -37,6 +39,8 @@ class OpenWeatherService {
                 do {
                     let owData = try JSONDecoder().decode(OWData.self, from: data)
                     let weather = Weather(data: owData)
+                    self.cacheService.deleteAllFiles()
+                    self.cacheService.saveData(fileName: weather.cityName, data: data)
                     completion(weather)
                 } catch {
                     print(error.localizedDescription)

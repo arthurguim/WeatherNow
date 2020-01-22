@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		187370A4CAD01C2A3F7FEB9F /* Pods_WeatherNow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C86D034F01A680A385F18C4 /* Pods_WeatherNow.framework */; };
 		990513C223D7295B007A4239 /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990513C123D7295B007A4239 /* InfoViewController.swift */; };
+		990513C423D761EF007A4239 /* CacheService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 990513C323D761EF007A4239 /* CacheService.swift */; };
 		991555A223D0F71500D93CCC /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 991555A423D0F71500D93CCC /* Localizable.strings */; };
 		993D57CB23D1E3E40091EC92 /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 993D57CA23D1E3E40091EC92 /* UILabel+Extension.swift */; };
 		99706F1D23D230BB00086F82 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 99706F1C23D230BB00086F82 /* String+Extension.swift */; };
@@ -29,6 +30,7 @@
 /* Begin PBXFileReference section */
 		2C86D034F01A680A385F18C4 /* Pods_WeatherNow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WeatherNow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		990513C123D7295B007A4239 /* InfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InfoViewController.swift; sourceTree = "<group>"; };
+		990513C323D761EF007A4239 /* CacheService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheService.swift; sourceTree = "<group>"; };
 		991555A323D0F71500D93CCC /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		991555A523D0F74E00D93CCC /* pt-BR */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "pt-BR"; path = "pt-BR.lproj/Localizable.strings"; sourceTree = "<group>"; };
 		993D57CA23D1E3E40091EC92 /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 			isa = PBXGroup;
 			children = (
 				E379B119235CC03600E2C28C /* OpenWeatherService.swift */,
+				990513C323D761EF007A4239 /* CacheService.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -292,6 +295,7 @@
 				E379B10F235CBBCA00E2C28C /* OWWeather.swift in Sources */,
 				E379B111235CBC8B00E2C28C /* OWMain.swift in Sources */,
 				E379B10B235CBAF100E2C28C /* OWData.swift in Sources */,
+				990513C423D761EF007A4239 /* CacheService.swift in Sources */,
 				E379B0F7235CB96D00E2C28C /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
