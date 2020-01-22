@@ -30,4 +30,4 @@ This is a work in progress. More features will be added in the future
 Icons made by [Freepik](https://www.flaticon.com/authors/freepik/) from [www.flaticon.com](https://www.flaticon.com/).
 
 ## License
-This project is licensed under the MIT License - see the LICENSE.md file for details
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details
