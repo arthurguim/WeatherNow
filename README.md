@@ -1,4 +1,4 @@
-# Weather Now
+# Weather Now v1.0
 A Simple Weather App for iOS, using [OpenWeather](https://openweathermap.org/) public API.
 
 ## Features
