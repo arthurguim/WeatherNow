@@ -52,6 +52,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JOc-9J-PYQ" userLabel="Location Indicator Image">
+                                <rect key="frame" x="58.5" y="220.5" width="13" height="12"/>
+                                <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="13" id="Kz8-89-lsI"/>
+                                    <constraint firstAttribute="width" constant="13" id="nUf-xV-DXO"/>
+                                </constraints>
+                            </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMV-pl-qPr" userLabel="First Separation View">
                                 <rect key="frame" x="10" y="245" width="355" height="1"/>
                                 <color key="backgroundColor" systemColor="systemGrayColor" red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -102,6 +110,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3c-Uf-tG5">
+                                <rect key="frame" x="159" y="587" width="57" height="30"/>
+                                <state key="normal" title="Add city"/>
+                                <connections>
+                                    <action selector="didTapAddCityButton:" destination="mBv-G8-sOg" eventType="touchUpInside" id="moU-7W-WZy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -111,6 +126,8 @@
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="rMV-pl-qPr" secondAttribute="trailing" constant="10" id="ANb-iv-kMe"/>
                             <constraint firstItem="dkN-jE-ehl" firstAttribute="top" secondItem="c0R-H1-pou" secondAttribute="bottom" constant="8" id="AOU-rj-eO1"/>
                             <constraint firstItem="LAW-I5-MQ0" firstAttribute="centerY" secondItem="qri-aj-hbp" secondAttribute="centerY" id="FF1-UN-d6u"/>
+                            <constraint firstItem="JOc-9J-PYQ" firstAttribute="centerY" secondItem="Lkh-D9-Dwp" secondAttribute="centerY" id="Gee-lJ-ahG"/>
+                            <constraint firstItem="hKK-rZ-Ccd" firstAttribute="bottom" secondItem="G3c-Uf-tG5" secondAttribute="bottom" constant="50" id="HG6-hm-vxj"/>
                             <constraint firstItem="h5D-Vn-Qu3" firstAttribute="top" secondItem="dkN-jE-ehl" secondAttribute="bottom" constant="130" id="Ha5-8i-bRT"/>
                             <constraint firstItem="qri-aj-hbp" firstAttribute="top" secondItem="rMV-pl-qPr" secondAttribute="bottom" constant="8" id="HaM-sa-vN5"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="top" secondItem="P17-Sr-eeC" secondAttribute="bottom" constant="10" id="Hal-Tl-WSo"/>
@@ -119,6 +136,7 @@
                             <constraint firstItem="zg8-4l-5G8" firstAttribute="centerY" secondItem="c0R-H1-pou" secondAttribute="centerY" id="S9y-pf-FJi"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="50" id="SJw-TF-fok"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="dkN-jE-ehl" secondAttribute="trailing" constant="10" id="SsK-Zp-Hgc"/>
+                            <constraint firstItem="G3c-Uf-tG5" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="V33-gL-JX3"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="N6s-yX-v22" secondAttribute="bottom" constant="50" id="Wql-RQ-7DY"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="centerX" secondItem="P17-Sr-eeC" secondAttribute="centerX" id="ZFC-Yh-1Tb"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="h5D-Vn-Qu3" secondAttribute="trailing" constant="35" id="a5s-vv-CtN"/>
@@ -126,6 +144,7 @@
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="Lkh-D9-Dwp" secondAttribute="bottom" constant="8" id="cxU-AG-4sk"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="LAW-I5-MQ0" secondAttribute="trailing" constant="16" id="d3C-ts-Cfa"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="leading" secondItem="qri-aj-hbp" secondAttribute="leading" id="e9B-qn-NS0"/>
+                            <constraint firstItem="JOc-9J-PYQ" firstAttribute="leading" secondItem="Lkh-D9-Dwp" secondAttribute="trailing" constant="4" id="fXY-NH-SeM"/>
                             <constraint firstItem="Mb2-vS-hri" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="iUu-Mt-kcj"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="kHe-4q-e7f"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="10" id="nQc-C7-09L"/>
@@ -142,9 +161,9 @@
                                 <segue destination="fm8-bM-mlr" kind="presentation" id="bLV-Fm-vog"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="GEc-g7-rDF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="GEc-g7-rDF">
                             <connections>
-                                <action selector="didTapAddCityButton:" destination="mBv-G8-sOg" id="Mbw-pc-Mc5"/>
+                                <action selector="didTapRefreshButton:" destination="mBv-G8-sOg" id="CCV-hH-ogx"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -159,6 +178,7 @@
                         <outlet property="messageLabel" destination="Mb2-vS-hri" id="b2R-mH-HfT"/>
                         <outlet property="messageTitleLabel" destination="h5D-Vn-Qu3" id="GIa-os-JLP"/>
                         <outlet property="minTemperatureLabel" destination="c0R-H1-pou" id="uQl-6B-UTg"/>
+                        <outlet property="refreshButton" destination="GEc-g7-rDF" id="vP4-hq-LVo"/>
                         <outlet property="weatherDescriptionLabel" destination="N6s-yX-v22" id="33x-a7-NZt"/>
                     </connections>
                 </viewController>
@@ -222,5 +242,6 @@
     </scenes>
     <resources>
         <image name="info.circle" catalog="system" width="64" height="60"/>
+        <image name="location.fill" catalog="system" width="64" height="56"/>
     </resources>
 </document>

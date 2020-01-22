@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var messageTitleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
-//    @IBOutlet weak var refreshButton: UIBarButtonItem!
+    @IBOutlet weak var refreshButton: UIBarButtonItem!
 
     // MARK: - Local parameters
     var weatherService: OpenWeatherService?
@@ -99,23 +99,20 @@ class MainViewController: UIViewController {
     }
 
     // MARK: - Actions
-    @IBAction func didTapAddCityButton(_ sender: UIBarButtonItem) {
+    @IBAction func didTapAddCityButton(_ sender: UIButton) {
         let citySelectionViewController = CitySelectionTableViewController(style: .grouped)
         self.navigationController?.pushViewController(citySelectionViewController, animated: true)
     }
 
-//    @IBAction func didTapRefreshButton(_ sender: Any) {
-//        if CLLocationManager.authorizationStatus() == .denied {
-//            return
-//        }
-//
-//        if self.activityIndicator.isAnimating {
-//            return
-//        }
-//
-//        self.activityIndicator.startAnimating()
-//        self.locationManager?.requestLocation()
-//    }
+    @IBAction func didTapRefreshButton(_ sender: Any) {
+        if CLLocationManager.authorizationStatus() == .denied {
+            return
+        }
+
+        self.activityIndicator.startAnimating()
+        self.refreshButton.isEnabled = false
+        self.locationManager?.requestLocation()
+    }
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -125,17 +122,18 @@ extension MainViewController: CLLocationManagerDelegate {
 
         switch status {
         case .authorizedWhenInUse:
-//            self.refreshButton.isEnabled = true
+            self.refreshButton.isEnabled = true
             self.messageTitleLabel.isHidden = true
             self.messageLabel.isHidden = true
             self.activityIndicator.startAnimating()
+            self.refreshButton.isEnabled = false
             self.locationManager?.requestLocation()
         case .notDetermined:
             self.locationManager?.requestWhenInUseAuthorization()
-//            self.refreshButton.isEnabled = false
+            self.refreshButton.isEnabled = false
         case .denied:
             self.setMessage(titleKey: "Permition_Not_Granted_Title", messageKey: "Permition_Not_Granted_Message")
-//            self.refreshButton.isEnabled = false
+            self.refreshButton.isEnabled = false
         default:
             return
         }
@@ -150,6 +148,7 @@ extension MainViewController: CLLocationManagerDelegate {
         let longitude = String(location.coordinate.longitude)
         self.weatherService?.getData(lat: latitude, lon: longitude, completion: { weather in
             self.activityIndicator.stopAnimating()
+            self.refreshButton.isEnabled = true
 
             guard let weather = weather else {
                 self.setMessage(titleKey: "Fetch_Weather_Title", messageKey: "Fetch_Weather_Message")
@@ -163,6 +162,7 @@ extension MainViewController: CLLocationManagerDelegate {
         print(error.localizedDescription)
         self.setMessage(titleKey: "Fetch_Location_Title", messageKey: "Fetch_Location_Message")
         self.activityIndicator.stopAnimating()
+        self.refreshButton.isEnabled = true
         return
     }
 }
