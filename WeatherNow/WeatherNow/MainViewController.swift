@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var messageTitleLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!
-    @IBOutlet weak var refreshButton: UIBarButtonItem!
+//    @IBOutlet weak var refreshButton: UIBarButtonItem!
 
     // MARK: - Local parameters
     var weatherService: OpenWeatherService?
@@ -99,18 +99,23 @@ class MainViewController: UIViewController {
     }
 
     // MARK: - Actions
-    @IBAction func didTapRefreshButton(_ sender: Any) {
-        if CLLocationManager.authorizationStatus() == .denied {
-            return
-        }
-
-        if self.activityIndicator.isAnimating {
-            return
-        }
-
-        self.activityIndicator.startAnimating()
-        self.locationManager?.requestLocation()
+    @IBAction func didTapAddCityButton(_ sender: UIBarButtonItem) {
+        let citySelectionViewController = CitySelectionTableViewController(style: .grouped)
+        self.navigationController?.pushViewController(citySelectionViewController, animated: true)
     }
+
+//    @IBAction func didTapRefreshButton(_ sender: Any) {
+//        if CLLocationManager.authorizationStatus() == .denied {
+//            return
+//        }
+//
+//        if self.activityIndicator.isAnimating {
+//            return
+//        }
+//
+//        self.activityIndicator.startAnimating()
+//        self.locationManager?.requestLocation()
+//    }
 }
 
 // MARK: - CLLocationManagerDelegate
@@ -120,17 +125,17 @@ extension MainViewController: CLLocationManagerDelegate {
 
         switch status {
         case .authorizedWhenInUse:
-            self.refreshButton.isEnabled = true
+//            self.refreshButton.isEnabled = true
             self.messageTitleLabel.isHidden = true
             self.messageLabel.isHidden = true
             self.activityIndicator.startAnimating()
             self.locationManager?.requestLocation()
         case .notDetermined:
             self.locationManager?.requestWhenInUseAuthorization()
-            self.refreshButton.isEnabled = false
+//            self.refreshButton.isEnabled = false
         case .denied:
             self.setMessage(titleKey: "Permition_Not_Granted_Title", messageKey: "Permition_Not_Granted_Message")
-            self.refreshButton.isEnabled = false
+//            self.refreshButton.isEnabled = false
         default:
             return
         }

@@ -23,3 +23,9 @@
 
 // MARK: - InfoViewController
 "Info_Text" = "Weather information provided by OpenWeather.\n\nIcon made by Freepik from www.flaticon.com.";
+
+// MARK: - CitySelectionTableViewController
+"Navigation_Title" = "My cities";
+"Group_TableView_Header_Title" = "Citys selected";
+"Group_TableView_Footer_Title" = "Set a city to show in the main screen.";
+"Add_City_Text_Label_Cell" = "Add city";
