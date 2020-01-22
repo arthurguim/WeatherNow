@@ -14,7 +14,7 @@ class InfoViewController: UIViewController {
     @IBOutlet weak var appNameLabel: UILabel!
     @IBOutlet weak var infoTextView: UITextView!
 
-    // MARK: - View life cycle
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 

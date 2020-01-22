@@ -30,7 +30,7 @@ class MainViewController: UIViewController {
     var locationManager: CLLocationManager?
     var cacheService: CacheService?
 
-    // MARK: - View life cycle
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
