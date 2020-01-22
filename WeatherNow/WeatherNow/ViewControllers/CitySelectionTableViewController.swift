@@ -10,10 +10,23 @@ import UIKit
 
 class CitySelectionTableViewController: UITableViewController {
 
+    // MARK: - Local paramethers
     var citysSelected: [String] = []
 
+    var editButton: UIBarButtonItem {
+        get {
+            return UIBarButtonItem(barButtonSystemItem: .edit, target: self, action: #selector(CitySelectionTableViewController.didTapEditingButton(sender:)))
+        }
+    }
+
+    var doneButton: UIBarButtonItem {
+        get {
+            return UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(CitySelectionTableViewController.didTapEditingButton(sender:)))
+        }
+    }
+
     // MARK: - Objects declaration
-    let addCityCell: UITableViewCell = {
+    let addCityButtonCell: UITableViewCell = {
         let cell = UITableViewCell()
         cell.textLabel?.text = NSLocalizedString("Add_City_Text_Label_Cell", comment: "")
         cell.accessoryType = .disclosureIndicator
@@ -24,35 +37,48 @@ class CitySelectionTableViewController: UITableViewController {
         super.viewDidLoad()
 
         navigationItem.title = NSLocalizedString("Navigation_Title", comment: "")
+        self.navigationItem.rightBarButtonItem = self.editButton
+    }
 
-        view.addSubview(addCityCell)
+    @objc func didTapEditingButton(sender: UIBarButtonItem) {
+        UIView.animate(withDuration: 0.3) {
+            self.tableView.isEditing.toggle()
+
+            self.navigationItem.rightBarButtonItem = self.tableView.isEditing ? self.doneButton : self.editButton
+        }
     }
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        if citysSelected.count == 0 {
-            return 1
-        } else {
-            return 2
-        }
+        return citysSelected.count == 0 ? 1 : 2
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if citysSelected.count == 0 || section == 1 {
-            return 1
-        } else {
-            return citysSelected.count
+        switch section {
+        case 0:
+            return citysSelected.count == 0 ? 1 : citysSelected.count
+        case 1:
+            return self.tableView.isEditing ? 0 : 1
+        default:
+            fatalError()
         }
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if citysSelected.count == 0 || indexPath.section == 1 {
-            return addCityCell
-        } else {
-            let city = citysSelected[indexPath.row]
-            let cell = UITableViewCell()
-            cell.textLabel?.text = city
-            return cell
+        switch indexPath.section {
+        case 0:
+            if self.citysSelected.count == 0 {
+                return self.addCityButtonCell
+            } else {
+                let city = citysSelected[indexPath.row]
+                let cell = UITableViewCell()
+                cell.textLabel?.text = city
+                return cell
+            }
+        case 1:
+            return self.addCityButtonCell
+        default:
+            fatalError()
         }
     }
 
