@@ -43,10 +43,13 @@ class MainViewController: UIViewController {
         self.locationManager?.delegate = self
 
         self.cacheService = CacheService()
-
-        self.locationImageBlinkerTimer = Timer.scheduledTimer(timeInterval: TimeInterval(1.0), target: self, selector: #selector(blinkLocationImage), userInfo: nil, repeats: true)
-
         self.displayCachedData()
+
+        self.locationImageBlinkerTimer = Timer.scheduledTimer(timeInterval: TimeInterval(0.7),
+                                                              target: self,
+                                                              selector: #selector(blinkLocationImage),
+                                                              userInfo: nil,
+                                                              repeats: true)
     }
 
     // MARK: - Local functions
@@ -106,12 +109,12 @@ class MainViewController: UIViewController {
 
     @objc func blinkLocationImage() {
         if self.isLocationImageFilled {
-            UIView.animate(withDuration: 0.7) {
+            UIView.animate(withDuration: 0.6) {
                 self.locationIndicatorImage.alpha = 0.3
             }
             self.isLocationImageFilled = false
         } else {
-            UIView.animate(withDuration: 0.7) {
+            UIView.animate(withDuration: 0.6) {
                 self.locationIndicatorImage.alpha = 1.0
             }
             self.isLocationImageFilled = true
@@ -135,7 +138,7 @@ class MainViewController: UIViewController {
         if withError {
             self.locationIndicatorImage.isHidden = true
         } else if self.locationIndicatorImage.alpha != 1.0 {
-            UIView.animate(withDuration: 0.7) {
+            UIView.animate(withDuration: 0.6) {
                 self.locationIndicatorImage.alpha = 1.0
                 self.isLocationImageFilled = true
             }
