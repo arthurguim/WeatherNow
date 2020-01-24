@@ -52,7 +52,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JOc-9J-PYQ" userLabel="Location Indicator Image">
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JOc-9J-PYQ" userLabel="Location Indicator Image">
                                 <rect key="frame" x="58.5" y="220.5" width="13" height="12"/>
                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
@@ -173,6 +173,7 @@
                         <outlet property="currentTemperatureLabel" destination="P17-Sr-eeC" id="yhG-Dg-tBu"/>
                         <outlet property="feelsLikeLabel" destination="LAW-I5-MQ0" id="ICb-te-RRT"/>
                         <outlet property="humidityLabel" destination="zg8-4l-5G8" id="AN0-At-umF"/>
+                        <outlet property="locationIndicatorImage" destination="JOc-9J-PYQ" id="8vl-bB-H8D"/>
                         <outlet property="mainNavigationItem" destination="2gj-Ol-6J9" id="EWN-Mj-fIG"/>
                         <outlet property="maxTemperatureLabel" destination="qri-aj-hbp" id="ZHx-ce-lZy"/>
                         <outlet property="messageLabel" destination="Mb2-vS-hri" id="b2R-mH-HfT"/>

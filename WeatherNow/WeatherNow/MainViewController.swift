@@ -19,6 +19,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var maxTemperatureLabel: UILabel!
     @IBOutlet weak var minTemperatureLabel: UILabel!
     @IBOutlet weak var cityNameLabel: UILabel!
+    @IBOutlet weak var locationIndicatorImage: UIImageView!
     @IBOutlet weak var feelsLikeLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var messageTitleLabel: UILabel!
@@ -29,6 +30,8 @@ class MainViewController: UIViewController {
     var weatherService: OpenWeatherService?
     var locationManager: CLLocationManager?
     var cacheService: CacheService?
+    var blinkerTimer: Timer?
+    var isBlinking: Bool = false
 
     // MARK: - View lifecycle
     override func viewDidLoad() {
@@ -40,6 +43,9 @@ class MainViewController: UIViewController {
         self.locationManager?.delegate = self
 
         self.cacheService = CacheService()
+
+        self.blinkerTimer = Timer.scheduledTimer(timeInterval: TimeInterval(1.0), target: self, selector: #selector(blinkLocationImage), userInfo: nil, repeats: true)
+
         self.displayCachedData()
     }
 
@@ -98,6 +104,20 @@ class MainViewController: UIViewController {
         }
     }
 
+    @objc func blinkLocationImage() {
+        if self.isBlinking {
+            UIView.animate(withDuration: 0.7) {
+                self.locationIndicatorImage.alpha = 0.3
+            }
+            self.isBlinking = false
+        } else {
+            UIView.animate(withDuration: 0.7) {
+                self.locationIndicatorImage.alpha = 1.0
+            }
+            self.isBlinking = true
+        }
+    }
+
     // MARK: - Actions
     @IBAction func didTapAddCityButton(_ sender: UIButton) {
         let citySelectionViewController = CitySelectionTableViewController(style: .grouped)
@@ -127,6 +147,8 @@ extension MainViewController: CLLocationManagerDelegate {
             self.messageLabel.isHidden = true
             self.activityIndicator.startAnimating()
             self.refreshButton.isEnabled = false
+            self.locationIndicatorImage.isHidden = false
+            self.blinkerTimer?.fire()
             self.locationManager?.requestLocation()
         case .notDetermined:
             self.locationManager?.requestWhenInUseAuthorization()
@@ -148,6 +170,7 @@ extension MainViewController: CLLocationManagerDelegate {
         let longitude = String(location.coordinate.longitude)
         self.weatherService?.getData(lat: latitude, lon: longitude, completion: { weather in
             self.activityIndicator.stopAnimating()
+            self.blinkerTimer?.invalidate()
             self.refreshButton.isEnabled = true
 
             guard let weather = weather else {
@@ -162,6 +185,8 @@ extension MainViewController: CLLocationManagerDelegate {
         print(error.localizedDescription)
         self.setMessage(titleKey: "Fetch_Location_Title", messageKey: "Fetch_Location_Message")
         self.activityIndicator.stopAnimating()
+        self.blinkerTimer?.invalidate()
+        self.locationIndicatorImage.isHidden = true
         self.refreshButton.isEnabled = true
         return
     }
