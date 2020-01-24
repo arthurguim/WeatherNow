@@ -53,11 +53,11 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="location.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="JOc-9J-PYQ" userLabel="Location Indicator Image">
-                                <rect key="frame" x="58.5" y="220.5" width="13" height="12"/>
+                                <rect key="frame" x="58.5" y="221" width="12" height="11"/>
                                 <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="13" id="Kz8-89-lsI"/>
-                                    <constraint firstAttribute="width" constant="13" id="nUf-xV-DXO"/>
+                                    <constraint firstAttribute="height" constant="12" id="Kz8-89-lsI"/>
+                                    <constraint firstAttribute="width" constant="12" id="nUf-xV-DXO"/>
                                 </constraints>
                             </imageView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rMV-pl-qPr" userLabel="First Separation View">
