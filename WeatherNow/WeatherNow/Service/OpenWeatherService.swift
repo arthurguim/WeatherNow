@@ -60,4 +60,30 @@ class OpenWeatherService {
 
         return NSLocale.preferredLanguages.contains(collatorId) ? NSLocale.current.identifier : APIConstants.usEnglishLanguage
     }
+
+    func downloadImage(imageName: String, onSuccess: @escaping ((UIImage) -> Void)) {
+
+        let imageUrl = String(format: APIConstants.openWeatherImageUrl, imageName)
+
+        let imageDestination: DownloadRequest.DownloadFileDestination = { _, _ in
+            let appLocalUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
+            let imageUrl = appLocalUrl.appendingPathComponent("weather.png")
+
+            return (imageUrl, [.removePreviousFile, .createIntermediateDirectories])
+        }
+
+        Alamofire.download(imageUrl, to: imageDestination).validate().responseData { response in
+            switch response.result {
+            case .success:
+                if let data = response.value, let image = UIImage(data: data) {
+                    onSuccess(image)
+                }
+                else {
+                    print("Could not retrieve image data from \(imageUrl)")
+                }
+            case let .failure(error):
+                print("Image API error: \(error.localizedDescription)")
+            }
+        }
+    }
 }

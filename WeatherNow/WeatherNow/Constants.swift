@@ -11,6 +11,7 @@ import Foundation
 // MARK: - API constants
 struct APIConstants {
     static let openWeatherUrl: String = "https://api.openweathermap.org/data/2.5/weather"
+    static let openWeatherImageUrl: String = "https://openweathermap.org/img/wn/%@@2x.png"
     static let latitudeKey: String = "lat"
     static let longitudeKey: String = "lon"
     static let apiKey = "appid"

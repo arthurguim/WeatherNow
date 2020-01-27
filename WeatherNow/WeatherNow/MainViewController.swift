@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var mainNavigationItem: UINavigationItem!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var currentTemperatureLabel: UILabel!
+    @IBOutlet weak var weatherImage: UIImageView!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
     @IBOutlet weak var maxTemperatureLabel: UILabel!
     @IBOutlet weak var minTemperatureLabel: UILabel!
@@ -80,6 +81,10 @@ class MainViewController: UIViewController {
         self.feelsLikeLabel.localizedValue(identifier: "Feels_Like_Label", value: feelsLike, defaultValue: AppContants.temperatureNoValue)
         let humidity = numberFormatter.string(for: weather.humidity)
         self.humidityLabel.localizedValue(identifier: "Humidity_Label", value: humidity, defaultValue: AppContants.humidityNoValue)
+
+        self.weatherService?.downloadImage(imageName: weather.iconName, onSuccess: { image in
+            self.weatherImage.image = image
+        })
 
         self.messageTitleLabel.isHidden = true
         self.messageLabel.isHidden = true

@@ -10,4 +10,5 @@ import Foundation
 
 struct OWWeather: Decodable {
     let description: String
+    let icon: String
 }
