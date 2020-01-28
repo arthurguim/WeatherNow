@@ -40,7 +40,7 @@ class OpenWeatherService {
                     let owData = try JSONDecoder().decode(OWData.self, from: data)
                     let weather = Weather(data: owData)
                     self.cacheService.deleteAllFiles()
-                    self.cacheService.saveData(fileName: weather.cityName, data: data)
+                    self.cacheService.saveData(fileName: weather.cityId, data: data)
                     completion(weather)
                 } catch {
                     print(error.localizedDescription)

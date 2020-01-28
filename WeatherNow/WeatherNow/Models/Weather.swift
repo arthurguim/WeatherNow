@@ -13,6 +13,7 @@ struct Weather {
     let iconName: String
     let description: String
     let cityName: String
+    let cityId: String
     let maxTemperature: Measurement<UnitTemperature>
     let minTemperature: Measurement<UnitTemperature>
     let feelsLike: Measurement<UnitTemperature>
@@ -21,6 +22,7 @@ struct Weather {
     init(data: OWData) {
         self.currentTemperature = data.main.currentTemperature
         self.cityName = data.name
+        self.cityId = data.id
         self.maxTemperature = data.main.maxTemperature
         self.minTemperature = data.main.minTemperature
         self.feelsLike = data.main.feelsLike

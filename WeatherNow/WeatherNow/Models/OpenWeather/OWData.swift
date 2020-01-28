@@ -9,6 +9,7 @@
 import Foundation
 
 struct OWData: Decodable {
+    let id: String
     let weather: [OWWeather]
     let main: OWMain
     let name: String
