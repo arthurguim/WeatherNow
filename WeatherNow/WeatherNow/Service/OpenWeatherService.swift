@@ -43,11 +43,11 @@ class OpenWeatherService {
                     self.cacheService.saveData(fileName: weather.cityId, data: data)
                     completion(weather)
                 } catch {
-                    print(error.localizedDescription)
+                    print("Error decoding weather data: \(error.localizedDescription)")
                     completion(nil)
                 }
             case .failure:
-                print(response.error?.localizedDescription ?? "Error fetching data from API")
+                print("Error fetching data from API: \(String(describing: response.error?.localizedDescription))")
                 completion(nil)
             }
         }
