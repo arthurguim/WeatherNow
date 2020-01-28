@@ -61,13 +61,14 @@ class OpenWeatherService {
         return NSLocale.preferredLanguages.contains(collatorId) ? NSLocale.current.identifier : APIConstants.usEnglishLanguage
     }
 
-    func downloadImage(imageName: String, onSuccess: @escaping ((UIImage) -> Void)) {
+    func downloadImage(cityId: String, imageName: String, onSuccess: @escaping ((UIImage?) -> Void)) {
 
         let imageUrl = String(format: APIConstants.openWeatherImageUrl, imageName)
 
         let imageDestination: DownloadRequest.DownloadFileDestination = { _, _ in
-            let appLocalUrl = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)[0]
-            let imageUrl = appLocalUrl.appendingPathComponent("weather.png")
+            let cacheUrl = CacheService.temporaryUrl
+            let imageName = String(format: CacheConstants.imageCacheName, cityId)
+            let imageUrl = cacheUrl.appendingPathComponent(imageName)
 
             return (imageUrl, [.removePreviousFile, .createIntermediateDirectories])
         }
@@ -80,9 +81,11 @@ class OpenWeatherService {
                 }
                 else {
                     print("Could not retrieve image data from \(imageUrl)")
+                    onSuccess(nil)
                 }
             case let .failure(error):
                 print("Image API error: \(error.localizedDescription)")
+                onSuccess(nil)
             }
         }
     }

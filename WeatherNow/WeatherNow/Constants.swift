@@ -29,6 +29,11 @@ struct AppContants {
     static let descriptionNoValue: String = "---------"
 }
 
+// MARK: - CacheService constants
+struct CacheConstants {
+    static let imageCacheName: String = "%@_Image"
+}
+
 // MARK: - InfoViewController constants
 struct InfoConstants {
     static let freepikUrl = "https://www.flaticon.com/authors/freepik"
