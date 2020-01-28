@@ -12,14 +12,15 @@
 "Pressure_Label" = "Pressure: %@";
 "Humidity_Label" = "Humidity: %@%%";
 "Feels_Like_Label" = "Feels like: %@";
+"Alert_OK_Button" = "OK";
 
 // MARK: - Messages
-"Fetch_Location_Title" = "Oh, no! I couldn`t fetch your location";
+"Fetch_Location_Title" = "It couldn't fetch your location";
 "Fetch_Location_Message" = "Please, try again later";
-"Fetch_Weather_Title" = "Oh, no! I couldn`t fetch the weather information";
+"Fetch_Weather_Title" = "It couldn`t fetch the weather information";
 "Fetch_Weather_Message" = "Please, try again later";
-"Permition_Not_Granted_Title" = "Unfortunatelly you didn't allow the app to get your location";
-"Permition_Not_Granted_Message" = "We can't display the weather :'(";
+"Permition_Not_Granted_Title" = "It doesn't have permission to get your location";
+"Permition_Not_Granted_Message" = "Allow the app to get your location so it can show the weather";
 
 // MARK: - InfoViewController
 "Info_Text" = "Weather information provided by OpenWeather.\n\nIcon made by Freepik from www.flaticon.com.";

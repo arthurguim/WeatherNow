@@ -26,6 +26,7 @@ struct APIConstants {
 struct AppContants {
     static let temperatureNoValue: String = "--°"
     static let humidityNoValue: String = "--"
+    static let descriptionNoValue: String = "---------"
 }
 
 // MARK: - InfoViewController constants

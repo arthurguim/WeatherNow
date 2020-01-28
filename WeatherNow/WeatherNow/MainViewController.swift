@@ -23,8 +23,6 @@ class MainViewController: UIViewController {
     @IBOutlet weak var locationIndicatorImage: UIImageView!
     @IBOutlet weak var feelsLikeLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
-    @IBOutlet weak var messageTitleLabel: UILabel!
-    @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
 
     // MARK: - Local parameters
@@ -63,6 +61,9 @@ class MainViewController: UIViewController {
     }
 
     func updateView(weather: Weather) {
+
+        self.shouldShowInterface(true)
+
         let numberFormatter = NumberFormatter()
         numberFormatter.locale = Locale.current
         numberFormatter.maximumFractionDigits = 0
@@ -85,16 +86,31 @@ class MainViewController: UIViewController {
         self.weatherService?.downloadImage(imageName: weather.iconName, onSuccess: { image in
             self.weatherImage.image = image
         })
-
-        self.messageTitleLabel.isHidden = true
-        self.messageLabel.isHidden = true
     }
 
-    func setMessage(titleKey: String, messageKey: String) {
-        self.messageTitleLabel.text = NSLocalizedString(titleKey, comment: "")
-        self.messageLabel.text = NSLocalizedString(messageKey, comment: "")
-        self.messageTitleLabel.isHidden = false
-        self.messageLabel.isHidden = false
+    func showAlert(titleKey: String, messageKey: String) {
+        let title = NSLocalizedString(titleKey, comment: "")
+        let message = NSLocalizedString(messageKey, comment: "")
+
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: NSLocalizedString("Alert_OK_Button", comment: ""), style: .default, handler: nil))
+
+        self.present(alert, animated: true)
+    }
+
+    func shouldShowInterface(_ shouldShow: Bool) {
+        self.weatherImage.isHidden = !shouldShow
+        self.maxTemperatureLabel.isHidden = !shouldShow
+        self.minTemperatureLabel.isHidden = !shouldShow
+        self.cityNameLabel.isHidden = !shouldShow
+        self.locationIndicatorImage.isHidden = !shouldShow
+        self.feelsLikeLabel.isHidden = !shouldShow
+        self.humidityLabel.isHidden = !shouldShow
+
+        if !shouldShow {
+            self.currentTemperatureLabel.text = AppContants.temperatureNoValue
+            self.weatherDescriptionLabel.text = AppContants.descriptionNoValue
+        }
     }
 
     func displayCachedData() {
@@ -127,8 +143,6 @@ class MainViewController: UIViewController {
     }
 
     func startLoadingUi() {
-        self.messageTitleLabel.isHidden = true
-        self.messageLabel.isHidden = true
         self.activityIndicator.startAnimating()
         self.refreshButton.isEnabled = false
         self.locationIndicatorImage.isHidden = false
@@ -180,7 +194,8 @@ extension MainViewController: CLLocationManagerDelegate {
             self.locationManager?.requestWhenInUseAuthorization()
             self.refreshButton.isEnabled = false
         case .denied:
-            self.setMessage(titleKey: "Permition_Not_Granted_Title", messageKey: "Permition_Not_Granted_Message")
+            self.showAlert(titleKey: "Permition_Not_Granted_Title", messageKey: "Permition_Not_Granted_Message")
+            self.shouldShowInterface(false)
             self.refreshButton.isEnabled = false
         default:
             return
@@ -198,7 +213,8 @@ extension MainViewController: CLLocationManagerDelegate {
 
             guard let weather = weather else {
                 self.stopLoadingUi(withError: true)
-                self.setMessage(titleKey: "Fetch_Weather_Title", messageKey: "Fetch_Weather_Message")
+                self.showAlert(titleKey: "Fetch_Weather_Title", messageKey: "Fetch_Weather_Message")
+                self.shouldShowInterface(false)
                 return
             }
 
@@ -209,7 +225,8 @@ extension MainViewController: CLLocationManagerDelegate {
 
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
         print(error.localizedDescription)
-        self.setMessage(titleKey: "Fetch_Location_Title", messageKey: "Fetch_Location_Message")
+        self.showAlert(titleKey: "Fetch_Location_Title", messageKey: "Fetch_Location_Message")
+        self.shouldShowInterface(false)
         self.locationIndicatorImage.isHidden = true
         self.stopLoadingUi(withError: true)
         return

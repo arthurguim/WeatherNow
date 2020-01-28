@@ -12,14 +12,15 @@
 "Pressure_Label" = "Pressão: %@";
 "Humidity_Label" = "Humidade: %@%%";
 "Feels_Like_Label" = "Sensação térmica: %@";
+"Alert_OK_Button" = "OK";
 
 // MARK: - Errors
-"Fetch_Location_Title" = "Ah, não! Não consegui os dados de sua localização";
+"Fetch_Location_Title" = "Não foi possível pegar sua localização";
 "Fetch_Location_Message" = "Por favor, tente novamente mais tarde";
-"Fetch_Weather_Title" = "Ah, não! Não consegui as informações do tempo";
+"Fetch_Weather_Title" = "Não foi possível pegar as informações do tempo";
 "Fetch_Weather_Message" = "Por favor, tente novamente mais tarde";
-"Permition_Not_Granted_Title" = "Infelizmente você não permitiu o app coletar sua localização";
-"Permition_Not_Granted_Message" = "Não é possível mostrar o tempo :'(";
+"Permition_Not_Granted_Title" = "Não tenho permissão de localização";
+"Permition_Not_Granted_Message" = "Dê permissão para o aplicativo pegar sua localização. Assim será possível mostrar o tempo";
 
 // MARK: - InfoViewController
 "Info_Text" = "Weather information provided by OpenWeather.\n\nIcon made by Freepik from www.flaticon.com.";

@@ -106,18 +106,6 @@
                                     <constraint firstAttribute="height" constant="1" id="YUi-sx-I3r"/>
                                 </constraints>
                             </view>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message title" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h5D-Vn-Qu3" userLabel="Message Title Label">
-                                <rect key="frame" x="35" y="442.5" width="305" height="18"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mb2-vS-hri" userLabel="Message Label">
-                                <rect key="frame" x="158.5" y="464.5" width="58" height="17"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G3c-Uf-tG5">
                                 <rect key="frame" x="159" y="587" width="57" height="30"/>
                                 <state key="normal" title="Add city"/>
@@ -137,27 +125,22 @@
                             <constraint firstItem="LAW-I5-MQ0" firstAttribute="centerY" secondItem="qri-aj-hbp" secondAttribute="centerY" id="FF1-UN-d6u"/>
                             <constraint firstItem="JOc-9J-PYQ" firstAttribute="centerY" secondItem="Lkh-D9-Dwp" secondAttribute="centerY" id="Gee-lJ-ahG"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="bottom" secondItem="G3c-Uf-tG5" secondAttribute="bottom" constant="50" id="HG6-hm-vxj"/>
-                            <constraint firstItem="h5D-Vn-Qu3" firstAttribute="top" secondItem="dkN-jE-ehl" secondAttribute="bottom" constant="130" id="Ha5-8i-bRT"/>
                             <constraint firstItem="qri-aj-hbp" firstAttribute="top" secondItem="rMV-pl-qPr" secondAttribute="bottom" constant="8" id="HaM-sa-vN5"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="top" secondItem="qri-aj-hbp" secondAttribute="bottom" constant="10" id="R11-S8-Xde"/>
-                            <constraint firstItem="Mb2-vS-hri" firstAttribute="top" secondItem="h5D-Vn-Qu3" secondAttribute="bottom" constant="4" id="R1u-TC-Awi"/>
                             <constraint firstItem="Lkh-D9-Dwp" firstAttribute="top" secondItem="P17-Sr-eeC" secondAttribute="bottom" constant="50" id="S35-fO-pfS"/>
                             <constraint firstItem="zg8-4l-5G8" firstAttribute="centerY" secondItem="c0R-H1-pou" secondAttribute="centerY" id="S9y-pf-FJi"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="top" secondItem="hKK-rZ-Ccd" secondAttribute="top" constant="50" id="SJw-TF-fok"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="dkN-jE-ehl" secondAttribute="trailing" constant="10" id="SsK-Zp-Hgc"/>
                             <constraint firstItem="G3c-Uf-tG5" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="V33-gL-JX3"/>
-                            <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="h5D-Vn-Qu3" secondAttribute="trailing" constant="35" id="a5s-vv-CtN"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="Lkh-D9-Dwp" secondAttribute="bottom" constant="8" id="cxU-AG-4sk"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="LAW-I5-MQ0" secondAttribute="trailing" constant="16" id="d3C-ts-Cfa"/>
                             <constraint firstItem="c0R-H1-pou" firstAttribute="leading" secondItem="qri-aj-hbp" secondAttribute="leading" id="e9B-qn-NS0"/>
                             <constraint firstItem="JOc-9J-PYQ" firstAttribute="leading" secondItem="Lkh-D9-Dwp" secondAttribute="trailing" constant="4" id="fXY-NH-SeM"/>
                             <constraint firstItem="P17-Sr-eeC" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="50" id="gQl-wu-pWS"/>
-                            <constraint firstItem="Mb2-vS-hri" firstAttribute="centerX" secondItem="vGV-aL-O9A" secondAttribute="centerX" id="iUu-Mt-kcj"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="top" secondItem="MYh-qr-hnK" secondAttribute="bottom" id="l6Y-DR-oIf"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="10" id="nQc-C7-09L"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="dwK-w2-bhn" secondAttribute="trailing" constant="20" id="rMm-0i-jnl"/>
                             <constraint firstItem="MYh-qr-hnK" firstAttribute="centerX" secondItem="N6s-yX-v22" secondAttribute="centerX" id="re4-H9-Ttc"/>
-                            <constraint firstItem="h5D-Vn-Qu3" firstAttribute="leading" secondItem="hKK-rZ-Ccd" secondAttribute="leading" constant="35" id="tR0-et-EQl"/>
                             <constraint firstItem="N6s-yX-v22" firstAttribute="centerY" secondItem="P17-Sr-eeC" secondAttribute="centerY" constant="20" id="uqK-ol-yxg"/>
                             <constraint firstItem="rMV-pl-qPr" firstAttribute="top" secondItem="dwK-w2-bhn" secondAttribute="bottom" constant="8" id="xFQ-OZ-e4W"/>
                             <constraint firstItem="hKK-rZ-Ccd" firstAttribute="trailing" secondItem="zg8-4l-5G8" secondAttribute="trailing" priority="999" constant="16" id="xhq-hD-pG3"/>
@@ -186,8 +169,6 @@
                         <outlet property="locationIndicatorImage" destination="JOc-9J-PYQ" id="8vl-bB-H8D"/>
                         <outlet property="mainNavigationItem" destination="2gj-Ol-6J9" id="EWN-Mj-fIG"/>
                         <outlet property="maxTemperatureLabel" destination="qri-aj-hbp" id="ZHx-ce-lZy"/>
-                        <outlet property="messageLabel" destination="Mb2-vS-hri" id="b2R-mH-HfT"/>
-                        <outlet property="messageTitleLabel" destination="h5D-Vn-Qu3" id="GIa-os-JLP"/>
                         <outlet property="minTemperatureLabel" destination="c0R-H1-pou" id="uQl-6B-UTg"/>
                         <outlet property="refreshButton" destination="GEc-g7-rDF" id="vP4-hq-LVo"/>
                         <outlet property="weatherDescriptionLabel" destination="N6s-yX-v22" id="33x-a7-NZt"/>
