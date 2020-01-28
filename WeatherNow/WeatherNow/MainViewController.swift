@@ -82,10 +82,7 @@ class MainViewController: UIViewController {
         self.feelsLikeLabel.localizedValue(identifier: "Feels_Like_Label", value: feelsLike, defaultValue: AppContants.temperatureNoValue)
         let humidity = numberFormatter.string(for: weather.humidity)
         self.humidityLabel.localizedValue(identifier: "Humidity_Label", value: humidity, defaultValue: AppContants.humidityNoValue)
-
-        self.weatherService?.downloadImage(imageName: weather.iconName, onSuccess: { image in
-            self.weatherImage.image = image
-        })
+        self.weatherImage.image = weather.image
     }
 
     func showAlert(titleKey: String, messageKey: String) {
@@ -211,15 +208,19 @@ extension MainViewController: CLLocationManagerDelegate {
         let longitude = String(location.coordinate.longitude)
         self.weatherService?.getData(lat: latitude, lon: longitude, completion: { weather in
 
-            guard let weather = weather else {
+            guard var weather = weather else {
                 self.stopLoadingUi(withError: true)
                 self.showAlert(titleKey: "Fetch_Weather_Title", messageKey: "Fetch_Weather_Message")
                 self.shouldShowInterface(false)
                 return
             }
 
-            self.stopLoadingUi()
-            self.updateView(weather: weather)
+            self.weatherService?.downloadImage(cityId: weather.cityId, imageName: weather.iconName, onSuccess: { image in
+                weather.image = image
+
+                self.stopLoadingUi()
+                self.updateView(weather: weather)
+            })
         })
     }
 
