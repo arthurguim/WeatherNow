@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct Weather {
     let currentTemperature: Measurement<UnitTemperature>
@@ -18,11 +19,12 @@ struct Weather {
     let minTemperature: Measurement<UnitTemperature>
     let feelsLike: Measurement<UnitTemperature>
     let humidity: Double
+    var image: UIImage? = nil
 
     init(data: OWData) {
         self.currentTemperature = data.main.currentTemperature
         self.cityName = data.name
-        self.cityId = data.id
+        self.cityId = String(data.id)
         self.maxTemperature = data.main.maxTemperature
         self.minTemperature = data.main.minTemperature
         self.feelsLike = data.main.feelsLike
