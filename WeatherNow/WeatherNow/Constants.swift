@@ -40,8 +40,7 @@ struct CacheConstants {
 // MARK: - MainViewController constants
 struct MainViewConstants {
     static let citysCollectionViewCellCornerRadius: CGFloat = 10
-    static let cityCollectionViewWidthPercentage: CGFloat = 0.25
-    static let cityCollectionViewHeightPercentage: CGFloat = 0.1
+    static let cityCollectionViewHeight: CGFloat = 120
 }
 
 // MARK: - InfoViewController constants

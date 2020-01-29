@@ -32,6 +32,8 @@ class MainViewController: UIViewController {
     var cacheService: CacheService?
     var locationImageBlinkerTimer: Timer?
     var isLocationImageFilled: Bool = false
+    var maxNumberOtherCities: Int = 5
+    var otherCities: [Weather] = []
 
     // MARK: - View lifecycle
     override func viewDidLoad() {
@@ -42,6 +44,9 @@ class MainViewController: UIViewController {
 
         let cityNib = UINib(nibName: CityCollectionViewCell.viewIdentifier, bundle: nil)
         self.otherCitysCollectionView.register(cityNib, forCellWithReuseIdentifier: CityCollectionViewCell.viewIdentifier)
+
+        let newCityNib = UINib(nibName: NewCityCollectionViewCell.viewIdentifier, bundle: nil)
+        self.otherCitysCollectionView.register(newCityNib, forCellWithReuseIdentifier: NewCityCollectionViewCell.viewIdentifier)
 
         self.weatherService = OpenWeatherService()
 
@@ -124,6 +129,8 @@ class MainViewController: UIViewController {
         }
 
         updateView(weather: weather)
+        self.otherCities.append(weather)
+        self.otherCitysCollectionView.reloadData()
     }
 
     @objc func blinkLocationImage() {
@@ -239,15 +246,27 @@ extension MainViewController: CLLocationManagerDelegate {
 extension MainViewController: UICollectionViewDataSource {
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 3
+        return self.otherCities.count == self.maxNumberOtherCities ? self.maxNumberOtherCities : self.otherCities.count + 1
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+
+        if indexPath.row == self.otherCities.count {
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: NewCityCollectionViewCell.viewIdentifier, for: indexPath) as? NewCityCollectionViewCell else {
+                fatalError()
+            }
+
+            cell.layer.cornerRadius = MainViewConstants.citysCollectionViewCellCornerRadius
+
+            return cell
+        }
+
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CityCollectionViewCell.viewIdentifier, for: indexPath) as? CityCollectionViewCell else {
             fatalError()
         }
 
         cell.layer.cornerRadius = MainViewConstants.citysCollectionViewCellCornerRadius
+        cell.setWeather(self.otherCities[indexPath.row])
 
         return cell
     }
@@ -255,11 +274,9 @@ extension MainViewController: UICollectionViewDataSource {
 
 // MARK: - UICollectionViewDelegate
 extension MainViewController: UICollectionViewDelegateFlowLayout {
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        let width = self.view.frame.width - self.view.frame.width * MainViewConstants.cityCollectionViewWidthPercentage
-        let height = self.otherCitysCollectionView.frame.height - self.otherCitysCollectionView.frame.height * MainViewConstants.cityCollectionViewHeightPercentage
-
-        return CGSize(width: width, height: height)
+        return CGSize(width: self.view.frame.width, height: MainViewConstants.cityCollectionViewHeight)
     }
 }
