@@ -129,8 +129,6 @@ class MainViewController: UIViewController {
         }
 
         updateView(weather: weather)
-        self.otherCities.append(weather)
-        self.otherCitysCollectionView.reloadData()
     }
 
     @objc func blinkLocationImage() {
