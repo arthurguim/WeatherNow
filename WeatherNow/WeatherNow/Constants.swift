@@ -31,7 +31,9 @@ struct AppContants {
 
 // MARK: - CacheService constants
 struct CacheConstants {
-    static let imageCacheName: String = "%@_Image"
+    static let appleCacheName: String = "apple"
+    static let imageNameFlag: String = "_Image"
+    static let imageCacheName: String = "%@\(imageNameFlag)"
 }
 
 // MARK: - InfoViewController constants

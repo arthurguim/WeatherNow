@@ -111,18 +111,12 @@ class MainViewController: UIViewController {
     }
 
     func displayCachedData() {
-        guard let data = self.cacheService?.loadData() else {
+        guard let weather = self.cacheService!.loadWeatherData() else {
             self.localizeLabels()
             return
         }
 
-        do {
-            let owData = try JSONDecoder().decode(OWData.self, from: data)
-            updateView(weather: Weather(data: owData))
-        } catch {
-            print("Error decoding cached data: \(error.localizedDescription)")
-            self.localizeLabels()
-        }
+        updateView(weather: weather)
     }
 
     @objc func blinkLocationImage() {

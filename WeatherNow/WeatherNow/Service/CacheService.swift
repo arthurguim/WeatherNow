@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class CacheService {
 
@@ -32,14 +33,26 @@ class CacheService {
         }
     }
 
-    func loadData() -> Data? {
-        guard let fileName = getAllFilesNames()?.first else { return nil }
+    func loadWeatherData() -> Weather? {
+        let allnames = getAllFilesNames()
+
+        let images = allnames?.filter({ $0.contains(CacheConstants.imageNameFlag) })
+        let weathers = allnames?.filter({ !$0.contains(CacheConstants.imageNameFlag) && !$0.contains(CacheConstants.appleCacheName) })
+
+        guard let weatherFileName = weathers?.first, let imageFileName = images?.first else { return nil }
 
         do {
-            let data = try Data(contentsOf: CacheService.self.temporaryUrl.appendingPathComponent(fileName, isDirectory: false))
-            return data
+            let weatherData = try Data(contentsOf: CacheService.self.temporaryUrl.appendingPathComponent(weatherFileName, isDirectory: false))
+            let owData = try JSONDecoder().decode(OWData.self, from: weatherData)
+            var weather = Weather(data: owData)
+
+            let imageData = try Data(contentsOf: CacheService.self.temporaryUrl.appendingPathComponent(imageFileName, isDirectory: false))
+            let image = UIImage(data: imageData)
+            weather.image = image
+
+            return weather
         } catch {
-            print("Error loading data: \(error.localizedDescription)")
+            print("Error loading or decoding cache data: \(error.localizedDescription)")
             return nil
         }
     }
