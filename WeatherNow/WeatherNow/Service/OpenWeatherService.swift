@@ -67,7 +67,7 @@ class OpenWeatherService {
 
         let imageDestination: DownloadRequest.DownloadFileDestination = { _, _ in
             let cacheUrl = CacheService.temporaryUrl
-            let imageName = String(format: CacheConstants.imageCacheName, cityId)
+            let imageName = String(format: CacheConstants.imageCacheName, imageName)
             let imageUrl = cacheUrl.appendingPathComponent(imageName)
 
             return (imageUrl, [.removePreviousFile, .createIntermediateDirectories])
