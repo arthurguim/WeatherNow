@@ -24,6 +24,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var feelsLikeLabel: UILabel!
     @IBOutlet weak var humidityLabel: UILabel!
     @IBOutlet weak var refreshButton: UIBarButtonItem!
+    @IBOutlet weak var otherCitysCollectionView: UICollectionView!
 
     // MARK: - Local parameters
     var weatherService: OpenWeatherService?
@@ -35,6 +36,12 @@ class MainViewController: UIViewController {
     // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        self.otherCitysCollectionView.dataSource = self
+        self.otherCitysCollectionView.delegate = self
+
+        let cityNib = UINib(nibName: CityCollectionViewCell.viewIdentifier, bundle: nil)
+        self.otherCitysCollectionView.register(cityNib, forCellWithReuseIdentifier: CityCollectionViewCell.viewIdentifier)
 
         self.weatherService = OpenWeatherService()
 
@@ -225,5 +232,34 @@ extension MainViewController: CLLocationManagerDelegate {
         self.locationIndicatorImage.isHidden = true
         self.stopLoadingUi(withError: true)
         return
+    }
+}
+
+// MARK: - UICollectionViewDataSource
+extension MainViewController: UICollectionViewDataSource {
+
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return 3
+    }
+
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: CityCollectionViewCell.viewIdentifier, for: indexPath) as? CityCollectionViewCell else {
+            fatalError()
+        }
+
+        cell.layer.cornerRadius = MainViewConstants.citysCollectionViewCellCornerRadius
+
+        return cell
+    }
+}
+
+// MARK: - UICollectionViewDelegate
+extension MainViewController: UICollectionViewDelegateFlowLayout {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+
+        let width = self.view.frame.width - self.view.frame.width * MainViewConstants.cityCollectionViewWidthPercentage
+        let height = self.otherCitysCollectionView.frame.height - self.otherCitysCollectionView.frame.height * MainViewConstants.cityCollectionViewHeightPercentage
+
+        return CGSize(width: width, height: height)
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 // MARK: - API constants
 struct APIConstants {
@@ -34,6 +35,13 @@ struct CacheConstants {
     static let appleCacheName: String = "apple"
     static let imageNameFlag: String = "_Image"
     static let imageCacheName: String = "%@\(imageNameFlag)"
+}
+
+// MARK: - MainViewController constants
+struct MainViewConstants {
+    static let citysCollectionViewCellCornerRadius: CGFloat = 10
+    static let cityCollectionViewWidthPercentage: CGFloat = 0.25
+    static let cityCollectionViewHeightPercentage: CGFloat = 0.1
 }
 
 // MARK: - InfoViewController constants
