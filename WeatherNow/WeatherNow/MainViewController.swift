@@ -275,6 +275,7 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
 
-        return CGSize(width: self.view.frame.width, height: MainViewConstants.cityCollectionViewHeight)
+        let width = self.view.frame.width - self.view.frame.width * 0.07
+        return CGSize(width: width, height: MainViewConstants.cityCollectionViewHeight)
     }
 }
