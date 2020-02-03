@@ -16,11 +16,17 @@ class CityCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var maxTempLabel: UILabel!
     @IBOutlet weak var minTempLabel: UILabel!
     @IBOutlet weak var weatherDescriptionLabel: UILabel!
+    @IBOutlet weak var maxTempLeadingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var currentTempTrailingConstraint: NSLayoutConstraint!
+    @IBOutlet weak var cityNameWidthConstraint: NSLayoutConstraint!
 
     static let viewIdentifier: String = "CityCollectionViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        let cellMargins = self.maxTempLeadingConstraint.constant + self.currentTempTrailingConstraint.constant
+        self.cityNameWidthConstraint.constant = self.contentView.frame.width - cellMargins
     }
 
     func setWeather(_ weather: Weather) {

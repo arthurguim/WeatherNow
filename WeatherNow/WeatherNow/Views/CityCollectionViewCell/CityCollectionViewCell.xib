@@ -50,6 +50,9 @@
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--------" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ule-Zr-sLt" userLabel="City Name Label">
                         <rect key="frame" x="15" y="96" width="62" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="62" id="fU8-MN-0kJ"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -76,8 +79,11 @@
             <size key="customSize" width="357" height="124"/>
             <connections>
                 <outlet property="cityNameLabel" destination="ule-Zr-sLt" id="b6U-xg-FzB"/>
+                <outlet property="cityNameWidthConstraint" destination="fU8-MN-0kJ" id="vLn-Qu-NZP"/>
                 <outlet property="currentTempLabel" destination="Eww-uw-tjU" id="cpf-c7-NNW"/>
+                <outlet property="currentTempTrailingConstraint" destination="fJO-R7-sgD" id="HBC-FN-aW9"/>
                 <outlet property="maxTempLabel" destination="vOg-Nn-r6O" id="rh8-8K-hjT"/>
+                <outlet property="maxTempLeadingConstraint" destination="vhE-cp-ufN" id="wnC-WG-12f"/>
                 <outlet property="minTempLabel" destination="fKQ-oc-mlo" id="juI-7H-XAq"/>
                 <outlet property="weatherDescriptionLabel" destination="Keu-0K-a9b" id="ozC-pE-Vcs"/>
                 <outlet property="weatherImageView" destination="I73-bt-RZs" id="L5t-UX-jcj"/>
