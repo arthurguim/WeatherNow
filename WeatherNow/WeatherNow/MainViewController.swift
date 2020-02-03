@@ -274,7 +274,11 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
     }
 
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let citySelectionViewController = CitySelectionTableViewController(style: .grouped)
-        self.navigationController?.pushViewController(citySelectionViewController, animated: true)
+        let cell = collectionView.cellForItem(at: indexPath)
+
+        if let _ = cell as? NewCityCollectionViewCell {
+            let citySelectionViewController = CitySelectionTableViewController(style: .grouped)
+            self.navigationController?.pushViewController(citySelectionViewController, animated: true)
+        }
     }
 }
