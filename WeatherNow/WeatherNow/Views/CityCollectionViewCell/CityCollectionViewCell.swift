@@ -15,6 +15,7 @@ class CityCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var weatherImageView: UIImageView!
     @IBOutlet weak var maxTempLabel: UILabel!
     @IBOutlet weak var minTempLabel: UILabel!
+    @IBOutlet weak var weatherDescriptionLabel: UILabel!
 
     static let viewIdentifier: String = "CityCollectionViewCell"
 
@@ -31,6 +32,7 @@ class CityCollectionViewCell: UICollectionViewCell {
         measurementFormatter.numberFormatter = numberFormatter
 
         self.cityNameLabel.text = weather.cityName
+        self.weatherDescriptionLabel.text = weather.description.firstLetterCapitalized
         self.currentTempLabel.text = measurementFormatter.string(from: weather.currentTemperature)
         self.weatherImageView.image = weather.image
 

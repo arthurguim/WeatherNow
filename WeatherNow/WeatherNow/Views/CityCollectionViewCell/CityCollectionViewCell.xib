@@ -17,12 +17,6 @@
                 <rect key="frame" x="0.0" y="0.0" width="357" height="124"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ule-Zr-sLt" userLabel="City Name Label">
-                        <rect key="frame" x="15" y="86" width="69" height="23"/>
-                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="19"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--°" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Eww-uw-tjU" userLabel="Current Temp Label">
                         <rect key="frame" x="300" y="15" width="42" height="39.5"/>
                         <fontDescription key="fontDescription" type="system" weight="light" pointSize="33"/>
@@ -48,14 +42,28 @@
                             <constraint firstAttribute="height" constant="50" id="ede-CU-xKP"/>
                         </constraints>
                     </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="--------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Keu-0K-a9b" userLabel="Weather Description Label">
+                        <rect key="frame" x="280" y="60" width="62" height="21"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--------" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ule-Zr-sLt" userLabel="City Name Label">
+                        <rect key="frame" x="15" y="96" width="62" height="13"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
             </view>
             <color key="backgroundColor" name="CityCollectionViewCell_background"/>
             <constraints>
+                <constraint firstItem="ule-Zr-sLt" firstAttribute="top" secondItem="Keu-0K-a9b" secondAttribute="bottom" constant="15" id="43b-is-VWz"/>
                 <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="ule-Zr-sLt" secondAttribute="bottom" constant="15" id="Ecd-VU-LKV"/>
-                <constraint firstItem="ule-Zr-sLt" firstAttribute="leading" secondItem="fKQ-oc-mlo" secondAttribute="leading" id="FLe-Q5-nPl"/>
                 <constraint firstItem="fKQ-oc-mlo" firstAttribute="leading" secondItem="vOg-Nn-r6O" secondAttribute="leading" id="FnT-8P-jvi"/>
                 <constraint firstItem="Eww-uw-tjU" firstAttribute="leading" secondItem="I73-bt-RZs" secondAttribute="trailing" constant="10" id="MnS-l6-iVH"/>
+                <constraint firstItem="Keu-0K-a9b" firstAttribute="trailing" secondItem="Eww-uw-tjU" secondAttribute="trailing" id="OBa-Yr-xaY"/>
+                <constraint firstItem="Keu-0K-a9b" firstAttribute="top" secondItem="I73-bt-RZs" secondAttribute="bottom" id="Ppi-jR-b7c"/>
                 <constraint firstItem="I73-bt-RZs" firstAttribute="centerY" secondItem="Eww-uw-tjU" secondAttribute="centerY" id="d9V-dT-CPI"/>
                 <constraint firstItem="vOg-Nn-r6O" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="15" id="eFT-lf-Eqv"/>
                 <constraint firstAttribute="trailing" secondItem="Eww-uw-tjU" secondAttribute="trailing" constant="15" id="fJO-R7-sgD"/>
@@ -71,6 +79,7 @@
                 <outlet property="currentTempLabel" destination="Eww-uw-tjU" id="cpf-c7-NNW"/>
                 <outlet property="maxTempLabel" destination="vOg-Nn-r6O" id="rh8-8K-hjT"/>
                 <outlet property="minTempLabel" destination="fKQ-oc-mlo" id="juI-7H-XAq"/>
+                <outlet property="weatherDescriptionLabel" destination="Keu-0K-a9b" id="ozC-pE-Vcs"/>
                 <outlet property="weatherImageView" destination="I73-bt-RZs" id="L5t-UX-jcj"/>
             </connections>
             <point key="canvasLocation" x="363.04347826086962" y="178.125"/>
@@ -78,7 +87,7 @@
     </objects>
     <resources>
         <namedColor name="CityCollectionViewCell_background">
-            <color red="0.93260200777202074" green="0.93260200777202074" blue="0.93260200777202074" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.93300002813339233" green="0.93300002813339233" blue="0.93300002813339233" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
