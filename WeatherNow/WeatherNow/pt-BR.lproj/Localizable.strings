@@ -12,6 +12,7 @@
 "Pressure_Label" = "Pressão: %@";
 "Humidity_Label" = "Humidade: %@%%";
 "Feels_Like_Label" = "Sensação térmica: %@";
+"Add_New_City_Button" = "Adicionar nova cidade";
 "Alert_OK_Button" = "OK";
 
 // MARK: - Errors

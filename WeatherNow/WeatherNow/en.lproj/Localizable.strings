@@ -12,6 +12,7 @@
 "Pressure_Label" = "Pressure: %@";
 "Humidity_Label" = "Humidity: %@%%";
 "Feels_Like_Label" = "Feels like: %@";
+"Add_New_City_Button" = "Add new city";
 "Alert_OK_Button" = "OK";
 
 // MARK: - Messages

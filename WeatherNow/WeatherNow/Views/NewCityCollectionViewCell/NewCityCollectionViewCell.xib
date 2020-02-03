@@ -40,12 +40,15 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <size key="customSize" width="344" height="343"/>
+            <connections>
+                <outlet property="addNewCityLabel" destination="HiL-7r-XW8" id="DnF-Ga-HBX"/>
+            </connections>
             <point key="canvasLocation" x="350.72463768115944" y="251.45089285714283"/>
         </collectionViewCell>
     </objects>
     <resources>
         <namedColor name="NewCityCollectionViewCell_background">
-            <color red="0.8828125" green="0.8828125" blue="0.8828125" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.88300001621246338" green="0.88300001621246338" blue="0.88300001621246338" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>

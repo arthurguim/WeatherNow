@@ -10,10 +10,14 @@ import UIKit
 
 class NewCityCollectionViewCell: UICollectionViewCell {
 
+    @IBOutlet weak var addNewCityLabel: UILabel!
+
     static let viewIdentifier: String = "NewCityCollectionViewCell"
 
     override func awakeFromNib() {
         super.awakeFromNib()
+
+        self.addNewCityLabel.text = NSLocalizedString("Add_New_City_Button", comment: "")
     }
 
 }

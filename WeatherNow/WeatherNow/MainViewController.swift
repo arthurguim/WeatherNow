@@ -167,12 +167,6 @@ class MainViewController: UIViewController {
         }
     }
 
-    // MARK: - Actions
-    @IBAction func didTapAddCityButton(_ sender: UIButton) {
-        let citySelectionViewController = CitySelectionTableViewController(style: .grouped)
-        self.navigationController?.pushViewController(citySelectionViewController, animated: true)
-    }
-
     @IBAction func didTapRefreshButton(_ sender: Any) {
         if CLLocationManager.authorizationStatus() == .denied {
             return
@@ -277,5 +271,10 @@ extension MainViewController: UICollectionViewDelegateFlowLayout {
 
         let width = self.view.frame.width - self.view.frame.width * 0.07
         return CGSize(width: width, height: MainViewConstants.cityCollectionViewHeight)
+    }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let citySelectionViewController = CitySelectionTableViewController(style: .grouped)
+        self.navigationController?.pushViewController(citySelectionViewController, animated: true)
     }
 }
