@@ -28,6 +28,7 @@ struct AppContants {
     static let temperatureNoValue: String = "--°"
     static let humidityNoValue: String = "--"
     static let descriptionNoValue: String = "---------"
+    static let cityNameWithCountryTemplate: String = "%@, %@"
 }
 
 // MARK: - CacheService constants

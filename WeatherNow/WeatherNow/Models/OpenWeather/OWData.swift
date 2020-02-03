@@ -12,5 +12,6 @@ struct OWData: Decodable {
     let id: Int
     let weather: [OWWeather]
     let main: OWMain
+    let sys: OWSys
     let name: String
 }

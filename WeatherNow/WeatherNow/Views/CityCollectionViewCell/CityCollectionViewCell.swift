@@ -37,7 +37,7 @@ class CityCollectionViewCell: UICollectionViewCell {
         let measurementFormatter = MeasurementFormatter()
         measurementFormatter.numberFormatter = numberFormatter
 
-        self.cityNameLabel.text = weather.cityName
+        self.cityNameLabel.text = String(format: AppContants.cityNameWithCountryTemplate, weather.cityName, weather.cityCountry)
         self.weatherDescriptionLabel.text = weather.description.firstLetterCapitalized
         self.currentTempLabel.text = measurementFormatter.string(from: weather.currentTemperature)
         self.weatherImageView.image = weather.image
