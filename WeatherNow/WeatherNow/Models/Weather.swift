@@ -9,7 +9,9 @@
 import Foundation
 import UIKit
 
-struct Weather {
+struct Weather: Identifiable {
+    let id = UUID()
+
     let currentTemperature: Measurement<UnitTemperature>
     let iconName: String
     let description: String
@@ -41,4 +43,45 @@ struct Weather {
         self.description = weather.description
         self.iconName = weather.icon
     }
+
+    init(currentTemperature: Measurement<UnitTemperature>,
+         iconName: String,
+         description: String,
+         cityName: String,
+         cityCountry: String,
+         cityId: String,
+         maxTemperature: Measurement<UnitTemperature>,
+         minTemperature: Measurement<UnitTemperature>,
+         feelsLike: Measurement<UnitTemperature>,
+         humidity: Double,
+         image: UIImage? = nil) {
+
+        self.currentTemperature = currentTemperature
+        self.iconName = iconName
+        self.description = description
+        self.cityName = cityName
+        self.cityCountry = cityCountry
+        self.cityId = cityId
+        self.maxTemperature = maxTemperature
+        self.minTemperature = minTemperature
+        self.feelsLike = feelsLike
+        self.humidity = humidity
+        self.image = image
+    }
 }
+
+#if DEBUG
+let testTemp: Measurement<UnitTemperature> = Measurement.init(value: 30, unit: UnitTemperature.celsius)
+let testData = [
+    Weather(currentTemperature: testTemp,
+            iconName: "Sun_icon",
+            description: "Sun",
+            cityName: "Rio de Janeiro",
+            cityCountry: "BR",
+            cityId: "12345",
+            maxTemperature: testTemp,
+            minTemperature: testTemp,
+            feelsLike: testTemp,
+            humidity: 50.0)
+]
+#endif

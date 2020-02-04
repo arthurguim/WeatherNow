@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class CitySelectionTableViewController: UITableViewController {
 
@@ -101,6 +102,10 @@ class CitySelectionTableViewController: UITableViewController {
     // MARK: - Table view delegate
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        let citySearchView = CitySearchView(searchText: "")
+        let citySearchViewController = UIHostingController(rootView: citySearchView)
+        self.navigationController?.present(citySearchViewController, animated: true)
     }
 
 }

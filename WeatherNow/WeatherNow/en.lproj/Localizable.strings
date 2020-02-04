@@ -31,3 +31,7 @@
 "Group_TableView_Header_Title" = "Citys selected";
 "Group_TableView_Footer_Title" = "Set a city to show in the main screen.";
 "Add_City_Text_Label_Cell" = "Add city";
+
+// MARK: - CitySearchViewController
+"Search_Text_Field_Placeholder" = "Enter a city name";
+"Search_Button_Text" = "Search";
