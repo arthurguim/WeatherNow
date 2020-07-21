@@ -210,8 +210,15 @@
                                     <constraint firstAttribute="height" constant="1" id="P9O-CS-gng"/>
                                 </constraints>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logo" translatesAutoresizingMaskIntoConstraints="NO" id="ug9-er-DX3" userLabel="App Logo">
+                                <rect key="frame" x="127.5" y="54" width="120" height="120"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="Zvd-xj-2ZX"/>
+                                    <constraint firstAttribute="height" constant="120" id="bzH-u2-lNO"/>
+                                </constraints>
+                            </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Tzr-ZV-Mhr">
-                                <rect key="frame" x="10" y="54" width="355" height="593"/>
+                                <rect key="frame" x="10" y="194" width="355" height="453"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -224,10 +231,12 @@
                             <constraint firstItem="ch0-KK-R2i" firstAttribute="trailing" secondItem="Cqs-co-6jr" secondAttribute="trailing" id="4ub-p4-y66"/>
                             <constraint firstItem="Tzr-ZV-Mhr" firstAttribute="leading" secondItem="ch0-KK-R2i" secondAttribute="leading" constant="10" id="IBt-Uw-0qS"/>
                             <constraint firstItem="ch0-KK-R2i" firstAttribute="bottom" secondItem="Tzr-ZV-Mhr" secondAttribute="bottom" id="JaA-uM-GBN"/>
-                            <constraint firstItem="Tzr-ZV-Mhr" firstAttribute="top" secondItem="Cqs-co-6jr" secondAttribute="bottom" constant="10" id="MGz-TY-AVC"/>
+                            <constraint firstItem="ug9-er-DX3" firstAttribute="centerX" secondItem="TxA-6O-V3s" secondAttribute="centerX" id="KPv-xr-tuk"/>
+                            <constraint firstItem="Tzr-ZV-Mhr" firstAttribute="top" secondItem="ug9-er-DX3" secondAttribute="bottom" constant="20" id="QTb-3f-JWk"/>
                             <constraint firstItem="BKs-Ot-UsF" firstAttribute="top" secondItem="ch0-KK-R2i" secondAttribute="top" constant="10" id="Y99-El-aNz"/>
                             <constraint firstItem="Cqs-co-6jr" firstAttribute="leading" secondItem="ch0-KK-R2i" secondAttribute="leading" id="gr3-qT-DdG"/>
                             <constraint firstItem="Cqs-co-6jr" firstAttribute="top" secondItem="BKs-Ot-UsF" secondAttribute="bottom" constant="10" id="sVc-cx-R3C"/>
+                            <constraint firstItem="ug9-er-DX3" firstAttribute="top" secondItem="Cqs-co-6jr" secondAttribute="bottom" constant="10" id="uEO-7h-Bv3"/>
                             <constraint firstItem="BKs-Ot-UsF" firstAttribute="centerX" secondItem="TxA-6O-V3s" secondAttribute="centerX" id="vCr-Ku-vXB"/>
                             <constraint firstItem="ch0-KK-R2i" firstAttribute="trailing" secondItem="Tzr-ZV-Mhr" secondAttribute="trailing" constant="10" id="zq6-Rl-QO2"/>
                         </constraints>
@@ -240,10 +249,11 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g8L-zi-LjL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1234" y="44"/>
+            <point key="canvasLocation" x="1232.8" y="43.628185907046479"/>
         </scene>
     </scenes>
     <resources>
+        <image name="Logo" width="128" height="128"/>
         <image name="info.circle" catalog="system" width="64" height="60"/>
         <image name="location.fill" catalog="system" width="64" height="56"/>
     </resources>
